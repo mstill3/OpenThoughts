@@ -22,8 +22,9 @@ import {
 } from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
-import theme from './theme.json'; // <-- Import app theme
-import mapping from './mapping.json'; // <-- Import app mapping
+import theme from '../theme.json'; // <-- Import app theme
+import mapping from '../mapping.json'; // <-- Import app mapping
+import Welcome from './pages/Welcome';
 
 const styles = StyleSheet.create({
   container: {
@@ -55,6 +56,7 @@ export default (): React.ReactFragment => (
       theme={{...eva.dark, ...theme}}
       customMapping={{...eva.mapping, ...mapping}}>
       <Layout style={styles.container}>
+        <Welcome />
         <Text style={styles.text} category="h1">
           Welcome to UI Kitten 😻
         </Text>
