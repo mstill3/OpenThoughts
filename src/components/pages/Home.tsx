@@ -19,7 +19,7 @@ export const HomeScreen = ({ navigation }) => {
       <Layout
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <NewThought />
-        <Button onPress={navigateDetails}>OPEN DETAILS</Button>
+        {/* <Button onPress={navigateDetails}>OPEN DETAILS</Button> */}
       </Layout>
       <Bottom />
     </SafeAreaView>

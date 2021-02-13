@@ -21,6 +21,7 @@
 		BF9D6A800E83BE8690A8635F /* libPods-MyApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A470B6F4AEAE9DE89817864A /* libPods-MyApp-tvOSTests.a */; };
 		F1BD055E6BA1F05E0CD73F65 /* libPods-MyApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2D58E3EB4A9B77DE781726 /* libPods-MyApp-tvOS.a */; };
 		E4D8A8110A6F4236B6438D73 /* ArchitectsDaughter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEDB8D77DE7140A68BFC8652 /* ArchitectsDaughter-Regular.ttf */; };
+		E5456BD4A6364BB9A0342B73 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EB1397F59A84DEF9190CD3E /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FD0E15B56F62A3CC4131F89A /* Pods-MyApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-MyApp-tvOS/Pods-MyApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AEDB8D77DE7140A68BFC8652 /* ArchitectsDaughter-Regular.ttf */ = {isa = PBXFileReference; name = "ArchitectsDaughter-Regular.ttf"; path = "../assets/ArchitectsDaughter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9EB1397F59A84DEF9190CD3E /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = "PBXGroup";
 			children = (
 				AEDB8D77DE7140A68BFC8652 /* ArchitectsDaughter-Regular.ttf */,
+				9EB1397F59A84DEF9190CD3E /* OpenSans-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E4D8A8110A6F4236B6438D73 /* ArchitectsDaughter-Regular.ttf in Resources */,
+				E5456BD4A6364BB9A0342B73 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

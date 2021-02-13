@@ -5,26 +5,44 @@ import {
 import ReplacementThoughtInput from '../atoms/ReplacementThoughtInput';
 import NegativeThoughtInput from '../atoms/NegativeThoughtInput';
 import CategoryInput from '../atoms/CategoryInput';
+import TextInput from '../atoms/TextInput';
 
 export default () => {
-  const [value, onChangeText] = React.useState('');
-  const onPressLearnMore = () => {
-    alert(value);
-    onChangeText('');
+  const [category, setCategory] = React.useState('');
+  const [negativeThought, setNegativeThought] = React.useState('');
+  const [replacementThought, setReplacementThought] = React.useState('');
+
+  const submit = () => {
+    alert(`${category} ${negativeThought} . ${replacementThought}`);
   };
 
   return (
       <Layout
         style={{ flex: 0, justifyContent: 'center', alignItems: 'center' }}>
-            <CategoryInput />
-            <NegativeThoughtInput />
-            <ReplacementThoughtInput />
-            <Button
-              onPress={onPressLearnMore}
-              accessibilityLabel="Log this thought"
-            >
-              Log
-            </Button>
+          <TextInput
+            label="Category"
+            placeholder="Category"
+            text={category}
+            onChangeText={setCategory}
+          />
+          <TextInput
+            label="Negative Thought"
+            placeholder="Negative Thought"
+            text={negativeThought}
+            onChangeText={setNegativeThought}
+          />
+          <TextInput
+            label="Replacement Thought"
+            placeholder="Replacement Thought"
+            text={replacementThought}
+            onChangeText={setReplacementThought}
+          />
+          <Button
+            onPress={submit}
+            accessibilityLabel="Log this thought"
+          >
+            Submit
+          </Button>
       </Layout>
   );
 }
