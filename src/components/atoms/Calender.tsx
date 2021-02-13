@@ -3,8 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Calendar, Text } from '@ui-kitten/components';
 
 const DayCell = ({ date }, style) => (
-  <View
-    style={[styles.dayContainer, style.container]}>
+  <View style={[styles.dayContainer, style.container]}>
     <Text style={style.text}>{`${date.getDate()}`}</Text>
     <Text style={[style.text, styles.value]}>
       {`${100 * date.getDate() + Math.pow(date.getDate(), 2)}$`}
@@ -13,13 +12,12 @@ const DayCell = ({ date }, style) => (
 );
 
 export default () => {
-
   const [date, setDate] = React.useState(null);
 
   return (
     <Calendar
       date={date}
-      onSelect={nextDate => setDate(nextDate)}
+      onSelect={(nextDate) => setDate(nextDate)}
       renderDay={DayCell}
     />
   );

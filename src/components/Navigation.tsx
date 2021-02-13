@@ -9,15 +9,15 @@ import Settings from './pages/Settings';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const TabNavigator = () => (
-  <Navigator tabBar={props => <Bottom {...props} />}>
-    <Screen name='Home' component={HomeScreen}/>
-    <Screen name='Details' component={DetailsScreen}/>
-    <Screen name='Settings' component={Settings}/>
+  <Navigator tabBar={(props) => <Bottom {...props} />}>
+    <Screen name="Home" component={HomeScreen} />
+    <Screen name="Details" component={DetailsScreen} />
+    <Screen name="Settings" component={Settings} />
   </Navigator>
 );
 
 export default () => (
   <NavigationContainer>
-    <TabNavigator/>
+    <TabNavigator />
   </NavigationContainer>
 );

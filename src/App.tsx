@@ -8,9 +8,7 @@ import AppNavigator from './components/Navigation';
 import { ThemeContext } from './theme-context';
 import { StatusBar } from 'react-native';
 
-
 export default () => {
-
   const [theme, setTheme] = React.useState('dark');
 
   const toggleTheme = () => {
@@ -18,11 +16,15 @@ export default () => {
     setTheme(nextTheme);
   };
 
-   return (
+  return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: theme === 'dark' ? 'black' : 'white' }}
-    >
-      <StatusBar barStyle={theme === 'dark' ? "light-content" : "dark-content"} />
+      style={{
+        flex: 1,
+        backgroundColor: theme === 'dark' ? 'black' : 'white',
+      }}>
+      <StatusBar
+        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
+      />
       <IconRegistry icons={EvaIconsPack} />
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <ApplicationProvider {...eva} theme={eva[theme]}>
@@ -31,4 +33,4 @@ export default () => {
       </ThemeContext.Provider>
     </SafeAreaView>
   );
-}
+};

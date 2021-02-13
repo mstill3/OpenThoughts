@@ -1,19 +1,22 @@
 import React from 'react';
-import {
-  Input, Layout
-} from '@ui-kitten/components';
+import { Input, Layout } from '@ui-kitten/components';
 
 interface Props {
-  label?: string
+  label?: string;
   placeholder?: string;
   text: string;
   onChangeText: (text: string) => void;
 }
 
-export default ({text, onChangeText, placeholder, label}: Props) => {
+export default ({ text, onChangeText, placeholder, label }: Props) => {
   return (
     <Layout
-      style={{ flex: 0, justifyContent: 'center', alignItems: 'center', padding: 15 }}>
+      style={{
+        flex: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 15,
+      }}>
       <Input
         label={label}
         value={text}
@@ -21,5 +24,5 @@ export default ({text, onChangeText, placeholder, label}: Props) => {
         onChangeText={(text) => onChangeText(text)}
       />
     </Layout>
-);
-}
+  );
+};

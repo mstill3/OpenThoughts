@@ -1,32 +1,30 @@
 import React, { useContext, useState } from 'react';
 import { SafeAreaView } from 'react-native';
-import { Button, Divider, Layout, TopNavigation, useTheme } from '@ui-kitten/components';
+import { Layout } from '@ui-kitten/components';
 import { Toggle } from '@ui-kitten/components';
 import { ThemeContext } from '../../theme-context';
+import { Text } from 'react-native-svg';
 
-export default ({ navigation }) => {
-  const navigateDetails = () => {
-    navigation.navigate('Details');
-  };
-  const theme = useTheme();
+export default () => {
   const themeContext = useContext(ThemeContext);
 
   const [lightMode, setLightMode] = useState(false);
   const onLightModeChange = (isChecked: boolean) => {
     setLightMode(isChecked);
-    themeContext.toggleTheme()
-  }
+    themeContext.toggleTheme();
+  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Layout
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Toggle 
-          checked={lightMode} 
-          onChange={onLightModeChange}
-        >
+        <Toggle checked={lightMode} onChange={onLightModeChange}>
           {lightMode ? 'Light' : 'Dark'} mode
         </Toggle>
+        <Toggle checked={lightMode} onChange={onLightModeChange}>
+          {lightMode ? 'Light' : 'Dark'} mode
+        </Toggle>
+        <Text> jjijiji </Text>
       </Layout>
     </SafeAreaView>
   );
