@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, useTheme } from '@ui-kitten/components';
-import NegativeThoughtInput from '../atoms/NegativeThoughtInput';
-import ReplacementThoughtInput from '../atoms/ReplacementThoughtInput';
-import Bottom from '../atoms/Bottom';
-import NewThought from '../molecules/NewThought';
 import { Toggle } from '@ui-kitten/components';
 
 export default ({ navigation }) => {
@@ -26,7 +22,6 @@ export default ({ navigation }) => {
           {`Lightmode: ${lightMode}`}
         </Toggle>
       </Layout>
-      <Bottom />
     </SafeAreaView>
   );
 };

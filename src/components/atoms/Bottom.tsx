@@ -6,25 +6,17 @@ import {
 } from '@ui-kitten/components';
 
 const PersonIcon = (props) => <Icon {...props} name="person-outline" />;
-
 const BellIcon = (props) => <Icon {...props} name="bell-outline" />;
-
-const EmailIcon = (props) => <Icon {...props} name="email-outline" />;
-
 const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
 
 
-export default () => {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  return (
+export default ({navigation, state}) => (
     <BottomNavigation
-      selectedIndex={selectedIndex}
-      onSelect={(index) => setSelectedIndex(index)}>
-      <BottomNavigationTab icon={PersonIcon} title="USERS" />
-      <BottomNavigationTab icon={BellIcon} title="ORDERS" />
-      <BottomNavigationTab icon={EmailIcon} title="TRANSACTIONS" />
+      selectedIndex={state.index}
+      onSelect={index => navigation.navigate(state.routeNames[index])}
+    >
+      <BottomNavigationTab icon={PersonIcon} title="HOME" />
+      <BottomNavigationTab icon={BellIcon} title="DETAILS" />
       <BottomNavigationTab icon={SettingsIcon} title="SETTINGS" />
     </BottomNavigation>
-  );
-};
+);

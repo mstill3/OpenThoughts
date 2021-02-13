@@ -2,9 +2,6 @@ import React from 'react';
 import {
   Input, Text, Button, Layout
 } from '@ui-kitten/components';
-import ReplacementThoughtInput from '../atoms/ReplacementThoughtInput';
-import NegativeThoughtInput from '../atoms/NegativeThoughtInput';
-import CategoryInput from '../atoms/CategoryInput';
 import TextInput from '../atoms/TextInput';
 
 export default () => {
@@ -13,7 +10,7 @@ export default () => {
   const [replacementThought, setReplacementThought] = React.useState('');
 
   const submit = () => {
-    alert(`${category} ${negativeThought} . ${replacementThought}`);
+    // alert(`${category} ${negativeThought} . ${replacementThought}`);
   };
 
   return (

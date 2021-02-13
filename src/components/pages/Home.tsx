@@ -1,8 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation, useTheme } from '@ui-kitten/components';
-import NegativeThoughtInput from '../atoms/NegativeThoughtInput';
-import ReplacementThoughtInput from '../atoms/ReplacementThoughtInput';
 import Bottom from '../atoms/Bottom';
 import NewThought from '../molecules/NewThought';
 
@@ -21,7 +19,6 @@ export const HomeScreen = ({ navigation }) => {
         <NewThought />
         {/* <Button onPress={navigateDetails}>OPEN DETAILS</Button> */}
       </Layout>
-      <Bottom />
     </SafeAreaView>
   );
 };
