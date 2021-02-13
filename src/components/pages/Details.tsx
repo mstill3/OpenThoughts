@@ -8,7 +8,7 @@ import {
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
-import Bottom from './Bottom';
+import Calender from '../atoms/Calender';
 
 const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
 
@@ -32,8 +32,8 @@ export const DetailsScreen = ({ navigation }) => {
       <Layout
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text category="h1">DETAILS</Text>
+        <Calender />
       </Layout>
-      <Bottom />
     </SafeAreaView>
   );
 };

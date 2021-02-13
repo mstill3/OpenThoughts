@@ -11,6 +11,9 @@ const BellIcon = (props) => <Icon {...props} name="bell-outline" />;
 
 const EmailIcon = (props) => <Icon {...props} name="email-outline" />;
 
+const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
+
+
 export default () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -21,6 +24,7 @@ export default () => {
       <BottomNavigationTab icon={PersonIcon} title="USERS" />
       <BottomNavigationTab icon={BellIcon} title="ORDERS" />
       <BottomNavigationTab icon={EmailIcon} title="TRANSACTIONS" />
+      <BottomNavigationTab icon={SettingsIcon} title="SETTINGS" />
     </BottomNavigation>
   );
 };
