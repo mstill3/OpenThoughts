@@ -12,8 +12,6 @@ export const HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TopNavigation title="MyApp" alignment="center" />
-      <Divider />
       <Layout
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <NewThought />

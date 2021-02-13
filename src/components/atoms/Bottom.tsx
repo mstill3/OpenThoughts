@@ -15,8 +15,8 @@ export default ({navigation, state}) => (
       selectedIndex={state.index}
       onSelect={index => navigation.navigate(state.routeNames[index])}
     >
-      <BottomNavigationTab icon={PersonIcon} title="HOME" />
-      <BottomNavigationTab icon={BellIcon} title="DETAILS" />
-      <BottomNavigationTab icon={SettingsIcon} title="SETTINGS" />
+      <BottomNavigationTab icon={PersonIcon} />
+      <BottomNavigationTab icon={BellIcon} />
+      <BottomNavigationTab icon={SettingsIcon} />
     </BottomNavigation>
 );
