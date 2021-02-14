@@ -7,8 +7,8 @@ import {
 import * as eva from '@eva-design/eva';
 import { ThemeContext } from '../../theme-context';
 
-const PersonIcon = (props) => <Icon {...props} name="person-outline" />;
-const BellIcon = (props) => <Icon {...props} name="bell-outline" />;
+const JournalIcon = (props) => <Icon {...props} name="home-outline" />;
+const Calendarcon = (props) => <Icon {...props} name="calendar-outline" />;
 const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
 
 export default ({ navigation, state }) => {
@@ -23,8 +23,8 @@ export default ({ navigation, state }) => {
       selectedIndex={state.index}
       onSelect={(index) => navigation.navigate(state.routeNames[index])}
       style={{ backgroundColor: eva[theme][backColor] }}>
-      <BottomNavigationTab icon={PersonIcon} />
-      <BottomNavigationTab icon={BellIcon} />
+      <BottomNavigationTab icon={JournalIcon} />
+      <BottomNavigationTab icon={Calendarcon} />
       <BottomNavigationTab icon={SettingsIcon} />
     </BottomNavigation>
   );
