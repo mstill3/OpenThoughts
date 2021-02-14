@@ -12,8 +12,7 @@ export default () => {
   const [theme, setTheme] = useState('dark');
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
   const backColor = useMemo(
-    () =>
-      theme === 'dark' ? 'color-basic-700' : 'color-basic-transparent-200',
+    () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),
     [theme],
   );
 
