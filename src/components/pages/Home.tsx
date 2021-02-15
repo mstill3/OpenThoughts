@@ -1,23 +1,21 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { Icon, Layout, Button, useTheme } from '@ui-kitten/components';
-import NewThought from '../molecules/NewThought';
+import { Icon, Layout, Button } from '@ui-kitten/components';
 
 const AddIcon = (props) => <Icon {...props} name="plus" />;
 
 export const HomeScreen = ({ navigation }) => {
-  const navigateDetails = () => {
-    navigation.navigate('Details');
+  const navigateNewThought = () => {
+    navigation.navigate('LogThought');
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Layout
-        style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Button status="danger" accessoryLeft={AddIcon} />
-        <NewThought />
-        {/* <Button onPress={navigateDetails}>OPEN DETAILS</Button> */}
-      </Layout>
-    </SafeAreaView>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Button
+        status="danger"
+        accessoryLeft={AddIcon}
+        onPress={navigateNewThought}
+      />
+      {/* <Button onPress={navigateDetails}>OPEN DETAILS</Button> */}
+    </Layout>
   );
 };

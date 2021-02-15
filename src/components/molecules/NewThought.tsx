@@ -13,7 +13,7 @@ export default () => {
   };
 
   return (
-    <Layout style={{ flex: 0, justifyContent: 'center', alignItems: 'center' }}>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <TextInput
         label="Category"
         placeholder="Category"
