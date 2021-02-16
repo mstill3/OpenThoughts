@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, Layout, Button } from '@ui-kitten/components';
+import style from '../../../styles/style';
 
 const AddIcon = (props) => <Icon {...props} name="plus" />;
 
@@ -9,13 +10,12 @@ export const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Layout style={style.centeredLayout}>
       <Button
         status="danger"
         accessoryLeft={AddIcon}
         onPress={navigateNewThought}
       />
-      {/* <Button onPress={navigateDetails}>OPEN DETAILS</Button> */}
     </Layout>
   );
 };

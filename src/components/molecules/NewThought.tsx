@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
+import style from '../../../styles/style';
 
 export default ({ navigation }) => {
   const [category, setCategory] = useState('');
@@ -17,7 +18,7 @@ export default ({ navigation }) => {
   };
 
   return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Layout style={style.centeredLayout}>
       <Button status="info" onPress={navigateBack}>
         Back
       </Button>

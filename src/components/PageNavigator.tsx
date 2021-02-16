@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import NewThought from './molecules/NewThought';
 import { HomeScreen } from './pages/Home';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TopNavigation } from '@ui-kitten/components';
 
 const { Navigator, Screen } = createStackNavigator();
 
