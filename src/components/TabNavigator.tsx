@@ -8,7 +8,13 @@ import Settings from './pages/Settings';
 import PageNavigator from './PageNavigator';
 // import NewThought from './molecules/NewThought';
 
-const { Navigator, Screen } = createBottomTabNavigator();
+export type RootTabsList = {
+  Home: undefined;
+  Details: undefined;
+  Settings: undefined;
+};
+
+const { Navigator, Screen } = createBottomTabNavigator<RootTabsList>();
 // screenOptions={{ tabBarVisibilityAnimationConfig: { show:  , hide:  } }}>
 const TabNavigator = () => (
   <Navigator tabBar={(props) => <Bottom {...props} />}>

@@ -1,10 +1,16 @@
 import React from 'react';
 import { Icon, Layout, Button } from '@ui-kitten/components';
 import style from '../../../styles/style';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { RootPagesList } from '../PageNavigator';
 
 const AddIcon = (props) => <Icon {...props} name="plus" />;
 
-export const HomeScreen = ({ navigation }) => {
+interface Props {
+  navigation: BottomTabNavigationProp<RootPagesList, 'Home'>;
+}
+
+export const HomeScreen = ({ navigation }: Props) => {
   const navigateNewThought = () => {
     navigation.navigate('LogThought');
   };
@@ -14,8 +20,9 @@ export const HomeScreen = ({ navigation }) => {
       <Button
         status="danger"
         accessoryLeft={AddIcon}
-        onPress={navigateNewThought}
-      />
+        onPress={navigateNewThought}>
+        Log
+      </Button>
     </Layout>
   );
 };

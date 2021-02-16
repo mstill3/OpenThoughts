@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
 import style from '../../../styles/style';
+import { RootPagesList } from '../PageNavigator';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
-export default ({ navigation }) => {
+interface Props {
+  navigation: BottomTabNavigationProp<RootPagesList, 'Home'>;
+}
+
+export default ({ navigation }: Props) => {
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
   const [replacementThought, setReplacementThought] = useState('');
@@ -14,7 +20,7 @@ export default ({ navigation }) => {
   };
 
   const navigateBack = () => {
-    navigation.navigate('Home');
+    navigation.goBack();
   };
 
   return (

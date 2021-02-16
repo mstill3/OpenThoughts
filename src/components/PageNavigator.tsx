@@ -4,7 +4,12 @@ import NewThought from './molecules/NewThought';
 import { HomeScreen } from './pages/Home';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const { Navigator, Screen } = createStackNavigator();
+export type RootPagesList = {
+  Home: undefined;
+  LogThought: undefined;
+};
+
+const { Navigator, Screen } = createStackNavigator<RootPagesList>();
 
 const PageNavigator = () => (
   <Navigator headerMode="none">
