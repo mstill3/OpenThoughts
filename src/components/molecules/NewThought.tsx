@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
 
-export default () => {
+export default ({ navigation }) => {
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
   const [replacementThought, setReplacementThought] = useState('');
@@ -12,8 +12,15 @@ export default () => {
     alert(`${category} ${negativeThought} ${replacementThought}`);
   };
 
+  const navigateBack = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Button status="info" onPress={navigateBack}>
+        Back
+      </Button>
       <TextInput
         label="Category"
         placeholder="Category"
