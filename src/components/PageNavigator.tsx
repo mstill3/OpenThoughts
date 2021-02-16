@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import NewThought from './molecules/NewThought';
-import { HomeScreen } from './pages/Home';
 import { createStackNavigator } from '@react-navigation/stack';
+import JournalPage from './pages/JournalPage';
 
 export type RootPagesList = {
   Home: undefined;
@@ -13,7 +13,7 @@ const { Navigator, Screen } = createStackNavigator<RootPagesList>();
 
 const PageNavigator = () => (
   <Navigator headerMode="none">
-    <Screen name="Home" component={HomeScreen} />
+    <Screen name="Home" component={JournalPage} />
     <Screen name="LogThought" component={NewThought} />
   </Navigator>
 );

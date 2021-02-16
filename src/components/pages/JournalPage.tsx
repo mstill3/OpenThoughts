@@ -10,7 +10,7 @@ interface Props {
   navigation: BottomTabNavigationProp<RootPagesList, 'Home'>;
 }
 
-export const HomeScreen = ({ navigation }: Props) => {
+export default ({ navigation }: Props) => {
   const navigateNewThought = () => {
     navigation.navigate('LogThought');
   };
