@@ -1,13 +1,13 @@
 import React from 'react';
 import { Icon, Layout, Button } from '@ui-kitten/components';
 import style from '../../../styles/style';
-import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { RootPagesList } from '../PageNavigator';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { JournalRoutesList } from '../navigators/JournalNavigator';
 
 const AddIcon = (props) => <Icon {...props} name="plus" />;
 
 interface Props {
-  navigation: BottomTabNavigationProp<RootPagesList, 'Home'>;
+  navigation: StackNavigationProp<JournalRoutesList, 'Main'>;
 }
 
 export default ({ navigation }: Props) => {

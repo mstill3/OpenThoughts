@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Layout } from '@ui-kitten/components';
+import { Button, Icon, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
 import style from '../../../styles/style';
-import { RootPagesList } from '../PageNavigator';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { JournalRoutesList } from '../navigators/JournalNavigator';
+
+const BackIcon = (props) => <Icon {...props} name="arrow-back-outline" />;
 
 interface Props {
-  navigation: BottomTabNavigationProp<RootPagesList, 'Home'>;
+  navigation: BottomTabNavigationProp<JournalRoutesList, 'LogThought'>;
 }
 
 export default ({ navigation }: Props) => {
@@ -25,7 +27,7 @@ export default ({ navigation }: Props) => {
 
   return (
     <Layout style={style.centeredLayout}>
-      <Button status="info" onPress={navigateBack}>
+      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
         Back
       </Button>
       <TextInput
