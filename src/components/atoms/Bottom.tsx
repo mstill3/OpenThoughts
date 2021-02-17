@@ -5,7 +5,7 @@ import {
   Icon,
 } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-import { ThemeContext } from '../../theme-context';
+import { ThemeContext } from '../../../theme-context';
 
 const JournalIcon = (props) => <Icon {...props} name="book-open-outline" />;
 const CalendarIcon = (props) => <Icon {...props} name="calendar-outline" />;
