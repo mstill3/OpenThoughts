@@ -1,19 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import * as eva from '@eva-design/eva';
+// import * as material from '@eva-design/material';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AppNavigator from './components/TabNavigator';
-import { ThemeContext } from './theme/theme-context';
+import { AppTheme, ThemeContext } from './theme/theme-context';
 import { StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 
 export default () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState<AppTheme>(AppTheme.dark);
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const toggleTheme = () => setTheme(theme === AppTheme.light ? AppTheme.dark : AppTheme.light);
   const backColor = useMemo(
-    () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),
+    () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-100'),
     [theme],
   );
 
