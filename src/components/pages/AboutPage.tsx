@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Layout, Text } from '@ui-kitten/components';
-import style from '../../../styles/style';
+import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
 import { BackIcon } from '../../../assets/icons';

@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-import { ThemeContext } from '../../../theme-context';
+import { ThemeContext } from '../../theme/theme-context';
 import {
   BulbIcon,
   CalendarIcon,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Button } from '@ui-kitten/components';
-import style from '../../../styles/style';
+import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { Text } from 'react-native-svg';

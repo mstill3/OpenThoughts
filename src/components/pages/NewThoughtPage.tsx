@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
-import style from '../../../styles/style';
+import style from '../../styles/style';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { BackIcon } from '../../../assets/icons';

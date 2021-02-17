@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Button, Layout, Text } from '@ui-kitten/components';
 import { Toggle } from '@ui-kitten/components';
-import { ThemeContext } from '../../../theme-context';
-import style from '../../../styles/style';
+import { ThemeContext } from '../../theme/theme-context';
+import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
 import { AboutIcon } from '../../../assets/icons';
