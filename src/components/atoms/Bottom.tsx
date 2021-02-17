@@ -1,16 +1,13 @@
 import React, { useContext, useMemo } from 'react';
-import {
-  BottomNavigation,
-  BottomNavigationTab,
-  Icon,
-} from '@ui-kitten/components';
+import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import { ThemeContext } from '../../../theme-context';
-
-const JournalIcon = (props) => <Icon {...props} name="book-open-outline" />;
-const CalendarIcon = (props) => <Icon {...props} name="calendar-outline" />;
-const BulbIcon = (props) => <Icon {...props} name="bulb-outline" />;
-const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
+import {
+  BulbIcon,
+  CalendarIcon,
+  JournalIcon,
+  SettingsIcon,
+} from '../../../assets/icons';
 
 export default ({ navigation, state }) => {
   const { theme } = useContext(ThemeContext);

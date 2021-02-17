@@ -1,10 +1,9 @@
 import React from 'react';
-import { Button, Icon, Layout, Text } from '@ui-kitten/components';
+import { Button, Layout, Text } from '@ui-kitten/components';
 import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
-
-const BackIcon = (props) => <Icon {...props} name="arrow-back-outline" />;
+import { BackIcon } from '../../../assets/icons';
 
 interface Props {
   navigation: StackNavigationProp<SettingsRoutesList, 'About'>;

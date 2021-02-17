@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Button, Icon, Layout, Text } from '@ui-kitten/components';
+import { Button, Layout, Text } from '@ui-kitten/components';
 import { Toggle } from '@ui-kitten/components';
 import { ThemeContext } from '../../../theme-context';
 import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
+import { AboutIcon } from '../../../assets/icons';
 
-const AboutIcon = (props) => <Icon {...props} name="info" />;
 interface Props {
   navigation: StackNavigationProp<SettingsRoutesList, 'Main'>;
 }

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Icon, Layout } from '@ui-kitten/components';
+import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
 import style from '../../../styles/style';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
-
-const BackIcon = (props) => <Icon {...props} name="arrow-back-outline" />;
+import { BackIcon } from '../../../assets/icons';
 
 interface Props {
   navigation: BottomTabNavigationProp<JournalRoutesList, 'LogThought'>;
