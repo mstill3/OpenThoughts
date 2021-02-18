@@ -5,21 +5,17 @@ import SettingsPage from '../pages/SettingsPage';
 import AboutPage from '../pages/AboutPage';
 
 export type SettingsRoutesList = {
-  Main: undefined;
-  About: undefined;
+  Settings: JSX.Element;
+  About: JSX.Element;
 };
 
 const { Navigator, Screen } = createStackNavigator<SettingsRoutesList>();
 
-const PageNavigator = () => (
-  <Navigator headerMode="none">
-    <Screen name="Main" component={SettingsPage} />
-    <Screen name="About" component={AboutPage} />
-  </Navigator>
-);
-
 export default () => (
   <NavigationContainer independent>
-    <PageNavigator />
+    <Navigator headerMode="none">
+      <Screen name="Settings" component={SettingsPage} />
+      <Screen name="About" component={AboutPage} />
+    </Navigator>
   </NavigationContainer>
 );

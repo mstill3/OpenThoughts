@@ -5,11 +5,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { Text } from 'react-native-svg';
 import { AddIcon } from '../../../assets/icons';
-import { SafeAreaView, View } from 'react-native';
-import { Toolbar } from '../atoms/Toolbar';
-
+import { View } from 'react-native';
 interface Props {
-  navigation: StackNavigationProp<JournalRoutesList, 'Main'>;
+  navigation: StackNavigationProp<JournalRoutesList, 'Journal'>;
 }
 
 export default ({ navigation }: Props) => {
@@ -19,7 +17,6 @@ export default ({ navigation }: Props) => {
 
   return (
     <View style={{ flex: 1 }}>
-      {/* <Toolbar title="Material App" onBackPress={() => navigation.goBack()} /> */}
       <Divider />
       <Layout style={style.centeredLayout}>
         <Text> hello world </Text>

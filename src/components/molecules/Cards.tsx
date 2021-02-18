@@ -4,22 +4,17 @@ import { Button, Card, Layout, Text } from '@ui-kitten/components';
 
 const Header = (props) => (
   <View {...props}>
-    <Text category='h6'>Maldives</Text>
-    <Text category='s1'>By Wikipedia</Text>
+    <Text category="h6">Maldives</Text>
+    <Text category="s1">By Wikipedia</Text>
   </View>
 );
 
 const Footer = (props) => (
   <View {...props} style={[props.style, styles.footerContainer]}>
-    <Button
-      style={styles.footerControl}
-      size='small'
-      status='basic'>
+    <Button style={styles.footerControl} size="small" status="basic">
       CANCEL
     </Button>
-    <Button
-      style={styles.footerControl}
-      size='small'>
+    <Button style={styles.footerControl} size="small">
       ACCEPT
     </Button>
   </View>
@@ -27,8 +22,7 @@ const Footer = (props) => (
 
 export const CardAccessoriesShowcase = () => (
   <React.Fragment>
-    <Layout style={styles.topContainer} level='1'>
-
+    <Layout style={styles.topContainer} level="1">
       <Card style={styles.card} header={Header}>
         <Text>With Header</Text>
       </Card>
@@ -36,17 +30,16 @@ export const CardAccessoriesShowcase = () => (
       <Card style={styles.card} footer={Footer}>
         <Text>With Footer</Text>
       </Card>
-
     </Layout>
 
     <Card style={styles.card} header={Header} footer={Footer}>
       <Text>
-        The Maldives, officially the Republic of Maldives, is a small country in South Asia, located in the Arabian Sea
-        of the Indian Ocean. It lies southwest of Sri Lanka and India, about 1,000 kilometres (620 mi) from the Asian
-        continent
+        The Maldives, officially the Republic of Maldives, is a small country in
+        South Asia, located in the Arabian Sea of the Indian Ocean. It lies
+        southwest of Sri Lanka and India, about 1,000 kilometres (620 mi) from
+        the Asian continent
       </Text>
     </Card>
-
   </React.Fragment>
 );
 

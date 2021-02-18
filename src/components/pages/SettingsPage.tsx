@@ -8,7 +8,7 @@ import { SettingsRoutesList } from '../navigators/SettingsNavigator';
 import { AboutIcon } from '../../../assets/icons';
 
 interface Props {
-  navigation: StackNavigationProp<SettingsRoutesList, 'Main'>;
+  navigation: StackNavigationProp<SettingsRoutesList, 'Settings'>;
 }
 
 export default ({ navigation }: Props) => {

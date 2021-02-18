@@ -5,8 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import JournalPage from '../pages/JournalPage';
 
 export type JournalRoutesList = {
-  Main: undefined;
-  LogThought: undefined;
+  Journal: JSX.Element;
+  LogThought: JSX.Element;
 };
 
 const { Navigator, Screen } = createStackNavigator<JournalRoutesList>();
@@ -14,7 +14,7 @@ const { Navigator, Screen } = createStackNavigator<JournalRoutesList>();
 export default () => (
   <NavigationContainer independent>
     <Navigator headerMode="none">
-      <Screen name="Main" component={JournalPage} />
+      <Screen name="Journal" component={JournalPage} />
       <Screen name="LogThought" component={NewThought} />
     </Navigator>
   </NavigationContainer>
