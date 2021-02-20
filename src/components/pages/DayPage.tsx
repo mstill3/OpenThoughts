@@ -3,27 +3,27 @@ import { Layout, Button, Divider } from '@ui-kitten/components';
 import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
-import { AddIcon } from '../../../assets/icons';
+import { Text } from 'react-native-svg';
 import { View } from 'react-native';
+import { BackIcon } from 'assets/icons';
+
 interface Props {
   navigation: StackNavigationProp<JournalRoutesList, 'Journal'>;
 }
 
 export default ({ navigation }: Props) => {
-  const navigateNewThought = () => {
-    navigation.navigate('LogThought');
+  const navigateBack = () => {
+    navigation.goBack();
   };
 
   return (
     <View style={{ flex: 1 }}>
       <Divider />
       <Layout style={style.centeredLayout}>
-        <Button
-          status="danger"
-          accessoryLeft={AddIcon}
-          onPress={navigateNewThought}>
-          Log
+        <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
+          Back
         </Button>
+        <Text> Notes on this Day </Text>
       </Layout>
     </View>
   );
