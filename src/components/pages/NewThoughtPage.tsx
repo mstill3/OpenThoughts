@@ -7,6 +7,7 @@ import { BackIcon } from '../../../assets/icons';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Alert } from 'react-native';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
 
@@ -17,9 +18,8 @@ export default () => {
   const [replacementThought, setReplacementThought] = useState('');
 
   const submit = () => {
-    // eslint-disable-next-line no-alert
     AsyncStorage.getItem('a').then((re) => {
-      alert(re);
+      Alert.alert(re);
     });
     AsyncStorage.setItem('a', category);
     // alert(`${category} ${negativeThought} ${replacementThought}`);

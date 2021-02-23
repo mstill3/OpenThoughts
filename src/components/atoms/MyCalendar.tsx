@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import { Calendar, Text } from '@ui-kitten/components';
 import {
   none_color,
@@ -25,7 +25,7 @@ const getColoredCircle = (date: Date) =>
 const DayCell = ({ date }, style) => (
   <View
     style={[styles.dayContainer, style.container]}
-    onTouchStart={() => alert(date)}>
+    onTouchStart={() => Alert.alert(date)}>
     <Text style={style.text}>{`${date.getDate()}`}</Text>
     {/* <Text> {date.UTC()} </Text> */}
     <View style={getColoredCircle(date)} />

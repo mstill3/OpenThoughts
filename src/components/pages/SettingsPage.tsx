@@ -30,7 +30,7 @@ export default () => {
         About
       </Button>
       <Toggle checked={lightMode} onChange={onLightModeChange}>
-        {lightMode ? 'Light' : 'Dark'} mode
+        {lightMode ? 'Light mode' : 'Dark mode'}
       </Toggle>
     </Layout>
   );
