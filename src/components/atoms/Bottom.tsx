@@ -8,8 +8,12 @@ import {
   JournalIcon,
   SettingsIcon,
 } from '../../../assets/icons';
+import {
+  BottomTabBarOptions,
+  BottomTabBarProps,
+} from '@react-navigation/bottom-tabs';
 
-export default ({ navigation, state }) => {
+export default ({ navigation, state }: BottomTabBarProps<BottomTabBarOptions>) => {
   const { theme } = useContext(ThemeContext);
   const backColor = useMemo(
     () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),

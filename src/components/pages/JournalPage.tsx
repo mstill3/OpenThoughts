@@ -5,11 +5,12 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { AddIcon } from '../../../assets/icons';
 import { View } from 'react-native';
-interface Props {
-  navigation: StackNavigationProp<JournalRoutesList, 'Journal'>;
-}
+import { useNavigation } from '@react-navigation/native';
 
-export default ({ navigation }: Props) => {
+type JournalNavigator = StackNavigationProp<JournalRoutesList, 'Journal'>;
+
+export default () => {
+  const navigation = useNavigation<JournalNavigator>();
   const navigateNewThought = () => {
     navigation.navigate('LogThought');
   };

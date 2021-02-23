@@ -23,8 +23,11 @@ const getColoredCircle = (date: Date) =>
   styles[diagnosis(daysDict[date.getDate()]) + 'Circle'];
 
 const DayCell = ({ date }, style) => (
-  <View style={[styles.dayContainer, style.container]}>
+  <View
+    style={[styles.dayContainer, style.container]}
+    onTouchStart={() => alert(date)}>
     <Text style={style.text}>{`${date.getDate()}`}</Text>
+    {/* <Text> {date.UTC()} </Text> */}
     <View style={getColoredCircle(date)} />
   </View>
 );

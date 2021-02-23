@@ -2,7 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Bottom from '../atoms/Bottom';
-// import { HomeScreen } from './pages/Home';
 import { CardAccessoriesShowcase } from '../molecules/Cards';
 import SettingsNavigator from './SettingsNavigator';
 import JournalNavigator from './JournalNavigator';

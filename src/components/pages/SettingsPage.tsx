@@ -6,12 +6,12 @@ import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
 import { AboutIcon } from '../../../assets/icons';
+import { useNavigation } from '@react-navigation/native';
 
-interface Props {
-  navigation: StackNavigationProp<SettingsRoutesList, 'Settings'>;
-}
+type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
-export default ({ navigation }: Props) => {
+export default () => {
+  const navigation = useNavigation<SettingsNavigator>();
   const themeContext = useContext(ThemeContext);
 
   const [lightMode, setLightMode] = useState(false);

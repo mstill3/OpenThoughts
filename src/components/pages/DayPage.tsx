@@ -2,16 +2,16 @@ import React from 'react';
 import { Layout, Button, Divider } from '@ui-kitten/components';
 import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { Text } from 'react-native-svg';
 import { View } from 'react-native';
 import { BackIcon } from 'assets/icons';
+import { useNavigation } from '@react-navigation/native';
+import { CalendarRoutesList } from '../navigators/CalendarNavigator';
 
-interface Props {
-  navigation: StackNavigationProp<JournalRoutesList, 'Journal'>;
-}
+type CalendarNavigator = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
-export default ({ navigation }: Props) => {
+export default () => {
+  const navigation = useNavigation<CalendarNavigator>();
   const navigateBack = () => {
     navigation.goBack();
   };

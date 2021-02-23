@@ -4,12 +4,12 @@ import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators/SettingsNavigator';
 import { BackIcon } from '../../../assets/icons';
+import { useNavigation } from '@react-navigation/native';
 
-interface Props {
-  navigation: StackNavigationProp<SettingsRoutesList, 'About'>;
-}
+type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'About'>;
 
-export default ({ navigation }: Props) => {
+export default () => {
+  const navigation = useNavigation<SettingsNavigator>();
   const navigateBack = () => {
     navigation.goBack();
   };

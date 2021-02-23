@@ -2,22 +2,27 @@ import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import TextInput from '../atoms/TextInput';
 import style from '../../styles/style';
-import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { JournalRoutesList } from '../navigators/JournalNavigator';
 import { BackIcon } from '../../../assets/icons';
+import AsyncStorage from '@react-native-community/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-interface Props {
-  navigation: BottomTabNavigationProp<JournalRoutesList, 'LogThought'>;
-}
+type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
 
-export default ({ navigation }: Props) => {
+export default () => {
+  const navigation = useNavigation<JournalNavigator>();
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
   const [replacementThought, setReplacementThought] = useState('');
 
   const submit = () => {
     // eslint-disable-next-line no-alert
-    alert(`${category} ${negativeThought} ${replacementThought}`);
+    AsyncStorage.getItem('a').then((re) => {
+      alert(re);
+    });
+    AsyncStorage.setItem('a', category);
+    // alert(`${category} ${negativeThought} ${replacementThought}`);
   };
 
   const navigateBack = () => {
