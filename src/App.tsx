@@ -7,6 +7,8 @@ import { TabNavigator } from './components/navigators';
 import { AppTheme, ThemeContext } from './theme/theme-context';
 import { StatusBar } from 'react-native';
 import { initFonts } from '../assets/fonts';
+import { Provider as StateProvider } from 'react-redux';
+import store from './redux/store';
 
 export default () => {
   const [theme, setTheme] = useState<AppTheme>(AppTheme.dark);
@@ -27,17 +29,20 @@ export default () => {
 
   return (
     fontsLoaded && (
-      <SafeAreaView style={{ flex: 1, backgroundColor: eva[theme][backColor] }}>
-        <StatusBar
-          barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
-        />
-        <IconRegistry icons={EvaIconsPack} />
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-          <ApplicationProvider {...eva} theme={eva[theme]}>
-            <TabNavigator />
-          </ApplicationProvider>
-        </ThemeContext.Provider>
-      </SafeAreaView>
+      <StateProvider store={store}>
+        <SafeAreaView
+          style={{ flex: 1, backgroundColor: eva[theme][backColor] }}>
+          <StatusBar
+            barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
+          />
+          <IconRegistry icons={EvaIconsPack} />
+          <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            <ApplicationProvider {...eva} theme={eva[theme]}>
+              <TabNavigator />
+            </ApplicationProvider>
+          </ThemeContext.Provider>
+        </SafeAreaView>
+      </StateProvider>
     )
   );
 };
