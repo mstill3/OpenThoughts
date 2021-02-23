@@ -1,6 +1,14 @@
-import { AsyncStorage } from './async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
-import { load, loadString, save, saveString, clear, remove } from './storage';
+import {
+  load,
+  loadString,
+  save,
+  saveString,
+  clear,
+  remove,
+  getAllKeys,
+} from './storage';
 
 // expo
 jest.mock('react-native', () => ({
@@ -48,6 +56,11 @@ test('saveString', async () => {
 test('remove', async () => {
   await remove('something');
   expect(AsyncStorage.removeItem).toHaveBeenCalledWith('something');
+});
+
+test('getAllKeys', async () => {
+  const keys = await getAllKeys();
+  expect(keys).toBe('array');
 });
 
 test('clear', async () => {

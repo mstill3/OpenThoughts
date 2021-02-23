@@ -1,4 +1,4 @@
-import { AsyncStorage } from './async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 /**
  * Loads a string from storage.
@@ -34,7 +34,7 @@ export async function saveString(key: string, value: string): Promise<boolean> {
  *
  * @param key The key to fetch.
  */
-export async function load(key: string): Promise<any | null> {
+export async function load<T>(key: string): Promise<T | null> {
   try {
     const almostThere = await AsyncStorage.getItem(key);
     return JSON.parse(almostThere);
@@ -49,7 +49,7 @@ export async function load(key: string): Promise<any | null> {
  * @param key The key to fetch.
  * @param value The value to store.
  */
-export async function save(key: string, value: any): Promise<boolean> {
+export async function save<T>(key: string, value: T): Promise<boolean> {
   try {
     await AsyncStorage.setItem(key, JSON.stringify(value));
     return true;
@@ -66,6 +66,15 @@ export async function save(key: string, value: any): Promise<boolean> {
 export async function remove(key: string): Promise<void> {
   try {
     await AsyncStorage.removeItem(key);
+  } catch {}
+}
+
+/**
+ * Get all keys in storage
+ */
+export async function getAllKeys(): Promise<string[]> {
+  try {
+    return await AsyncStorage.getAllKeys();
   } catch {}
 }
 
