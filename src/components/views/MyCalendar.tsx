@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Calendar, Text } from '@ui-kitten/components';
-import {
-  none_color,
-  awful_color,
-  bad_color,
-  good_color,
-  great_color,
-  okay_color,
-} from '../../styles/_colors';
+import { MoodColors } from '../../styles/_colors';
 import { diagnosis } from '../../utils/mood';
 
 const daysDict = {
@@ -62,26 +55,26 @@ const styles = StyleSheet.create({
   circle: circleStyle,
   greatCircle: {
     ...circleStyle,
-    backgroundColor: great_color,
+    backgroundColor: MoodColors.great,
   },
   goodCircle: {
     ...circleStyle,
-    backgroundColor: good_color,
+    backgroundColor: MoodColors.good,
   },
   okayCircle: {
     ...circleStyle,
-    backgroundColor: okay_color,
+    backgroundColor: MoodColors.okay,
   },
   badCircle: {
     ...circleStyle,
-    backgroundColor: bad_color,
+    backgroundColor: MoodColors.bad,
   },
   awfulCircle: {
     ...circleStyle,
-    backgroundColor: awful_color,
+    backgroundColor: MoodColors.awful,
   },
   noneCircle: {
     ...circleStyle,
-    backgroundColor: none_color,
+    backgroundColor: MoodColors.none,
   },
 });

@@ -12,12 +12,10 @@ type CalendarNavigator = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
 export const DayScreen = () => {
   const navigation = useNavigation<CalendarNavigator>();
-  const navigateBack = () => {
-    navigation.goBack();
-  };
+  const navigateBack = () => navigation.goBack();
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={style.flexed}>
       <Divider />
       <Layout style={style.centeredLayout}>
         <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>

@@ -12,15 +12,14 @@ type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
 export const SettingsScreen = () => {
   const navigation = useNavigation<SettingsNavigator>();
+  const navigateAbout = () => navigation.navigate('About');
+
   const themeContext = useContext(ThemeContext);
 
   const [lightMode, setLightMode] = useState(false);
   const onLightModeChange = (isChecked: boolean) => {
     setLightMode(isChecked);
     themeContext.toggleTheme();
-  };
-  const navigateAbout = () => {
-    navigation.navigate('About');
   };
 
   return (

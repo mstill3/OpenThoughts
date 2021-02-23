@@ -11,12 +11,10 @@ type JournalNavigator = StackNavigationProp<JournalRoutesList, 'Journal'>;
 
 export const JournalScreen = () => {
   const navigation = useNavigation<JournalNavigator>();
-  const navigateNewThought = () => {
-    navigation.navigate('LogThought');
-  };
+  const navigateNewThought = () => navigation.navigate('LogThought');
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={style.flexed}>
       <Divider />
       <Layout style={style.centeredLayout}>
         <Button

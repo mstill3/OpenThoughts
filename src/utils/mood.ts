@@ -1,8 +1,12 @@
-export const diagnosis = (moodScore: number) => {
-  if (moodScore >= 90) return 'great';
-  else if (moodScore >= 80) return 'good';
-  else if (moodScore >= 70) return 'okay';
-  else if (moodScore >= 60) return 'bad';
-  else if (moodScore >= 1) return 'awful';
-  else return 'none';
-};
+export const diagnosis = (moodScore: number) =>
+  moodScore >= 90
+    ? 'great'
+    : moodScore >= 80
+    ? 'good'
+    : moodScore >= 70
+    ? 'okay'
+    : moodScore >= 60
+    ? 'bad'
+    : moodScore >= 1
+    ? 'awful'
+    : 'none';

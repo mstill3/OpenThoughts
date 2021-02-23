@@ -45,9 +45,7 @@ export const NewThoughtScreen = () => {
     // alert(`${category} ${negativeThought} ${replacementThought}`);
   };
 
-  const navigateBack = () => {
-    navigation.goBack();
-  };
+  const navigateBack = () => navigation.goBack();
 
   return (
     <Layout style={style.centeredLayout}>

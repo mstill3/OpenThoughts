@@ -10,9 +10,7 @@ type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'About'>;
 
 export const AboutScreen = () => {
   const navigation = useNavigation<SettingsNavigator>();
-  const navigateBack = () => {
-    navigation.goBack();
-  };
+  const navigateBack = () => navigation.goBack();
 
   return (
     <Layout style={style.centeredLayout}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Layout } from '@ui-kitten/components';
+import style from '../../styles/style';
 
 interface Props {
   label?: string;
@@ -15,13 +16,7 @@ export const TextInput = ({
   label,
 }: Props) => {
   return (
-    <Layout
-      style={{
-        flex: 0,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 15,
-      }}>
+    <Layout style={style.textInput}>
       <Input
         label={label}
         value={text}

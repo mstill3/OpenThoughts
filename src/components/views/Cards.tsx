@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { Button, Card, Layout, Text } from '@ui-kitten/components';
+import style from '../../styles/style';
 
 const Header = (props) => (
   <View {...props}>
@@ -10,11 +11,11 @@ const Header = (props) => (
 );
 
 const Footer = (props) => (
-  <View {...props} style={[props.style, styles.footerContainer]}>
-    <Button style={styles.footerControl} size="small" status="basic">
+  <View {...props} style={[props.style, style.footerContainer]}>
+    <Button style={style.footerControl} size="small" status="basic">
       CANCEL
     </Button>
-    <Button style={styles.footerControl} size="small">
+    <Button style={style.footerControl} size="small">
       ACCEPT
     </Button>
   </View>
@@ -22,17 +23,17 @@ const Footer = (props) => (
 
 export const CardAccessoriesShowcase = () => (
   <React.Fragment>
-    <Layout style={styles.topContainer} level="1">
-      <Card style={styles.card} header={Header}>
+    <Layout style={style.topContainer} level="1">
+      <Card style={style.card} header={Header}>
         <Text>With Header</Text>
       </Card>
 
-      <Card style={styles.card} footer={Footer}>
+      <Card style={style.card} footer={Footer}>
         <Text>With Footer</Text>
       </Card>
     </Layout>
 
-    <Card style={styles.card} header={Header} footer={Footer}>
+    <Card style={style.card} header={Header} footer={Footer}>
       <Text>
         The Maldives, officially the Republic of Maldives, is a small country in
         South Asia, located in the Arabian Sea of the Indian Ocean. It lies
@@ -42,21 +43,3 @@ export const CardAccessoriesShowcase = () => (
     </Card>
   </React.Fragment>
 );
-
-const styles = StyleSheet.create({
-  topContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  card: {
-    flex: 1,
-    margin: 2,
-  },
-  footerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-  },
-  footerControl: {
-    marginHorizontal: 2,
-  },
-});
