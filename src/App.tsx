@@ -7,6 +7,7 @@ import TabNavigator from './components/navigators/TabNavigator';
 import { AppTheme, ThemeContext } from './theme/theme-context';
 import { StatusBar } from 'react-native';
 import { initFonts } from '../assets/fonts';
+import { getRealmApp } from './data/realm';
 
 export default () => {
   const [theme, setTheme] = useState<AppTheme>(AppTheme.dark);
@@ -23,6 +24,7 @@ export default () => {
       setFontsLoaded(true);
     };
     loadFonts();
+    const realmApp = getRealmApp();
   }, []);
 
   return (

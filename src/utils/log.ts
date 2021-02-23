@@ -1,4 +1,4 @@
-import Log from '../models/Log';
+import Log from '../data/models/Log';
 import { load, save } from './storage';
 
 export const saveLog = (key: string, log: Log): Promise<boolean> => {

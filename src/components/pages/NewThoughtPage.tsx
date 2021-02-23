@@ -7,8 +7,8 @@ import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Alert } from 'react-native';
-import Log from '../../models/Log';
-import { Mood } from '../../models/Mood';
+import Log from '../../data/models/Log';
+import { Mood } from '../../data/models/Mood';
 import { load, save } from '../../utils/storage';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
