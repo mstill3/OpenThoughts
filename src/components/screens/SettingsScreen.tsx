@@ -4,13 +4,13 @@ import { Toggle } from '@ui-kitten/components';
 import { ThemeContext } from '../../theme/theme-context';
 import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { SettingsRoutesList } from '../navigators/SettingsNavigator';
+import { SettingsRoutesList } from '../navigators';
 import { AboutIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 
 type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
-export default () => {
+export const SettingsScreen = () => {
   const navigation = useNavigation<SettingsNavigator>();
   const themeContext = useContext(ThemeContext);
 

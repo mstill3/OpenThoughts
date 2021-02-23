@@ -1,6 +1,6 @@
 import { Mood } from './Mood';
 
-export default class Log {
+export class Log {
   private createdAt: Date;
   private updatedAt: Date;
   private mood: Mood;

@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CalendarPage from '../pages/CalendarPage';
-import DayPage from '../pages/DayPage';
+import { CalendarScreen, DayScreen } from '../screens';
 
 export type CalendarRoutesList = {
   Calendar: JSX.Element;
@@ -11,11 +10,11 @@ export type CalendarRoutesList = {
 
 const { Navigator, Screen } = createStackNavigator<CalendarRoutesList>();
 
-export default () => (
+export const CalendarNavigator = () => (
   <NavigationContainer independent>
     <Navigator headerMode="none">
-      <Screen name="Calendar" component={CalendarPage} />
-      <Screen name="Day" component={DayPage} />
+      <Screen name="Calendar" component={CalendarScreen} />
+      <Screen name="Day" component={DayScreen} />
     </Navigator>
   </NavigationContainer>
 );

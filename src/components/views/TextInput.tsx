@@ -8,7 +8,12 @@ interface Props {
   onChangeText: (text: string) => void;
 }
 
-export default ({ text, onChangeText, placeholder, label }: Props) => {
+export const TextInput = ({
+  text,
+  onChangeText,
+  placeholder,
+  label,
+}: Props) => {
   return (
     <Layout
       style={{

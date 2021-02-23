@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Bottom from '../atoms/Bottom';
-import { CardAccessoriesShowcase } from '../molecules/Cards';
-import SettingsNavigator from './SettingsNavigator';
-import JournalNavigator from './JournalNavigator';
-import CalendarPage from '../pages/CalendarPage';
+import { Bottom, CardAccessoriesShowcase } from '../views';
+import { SettingsNavigator } from './SettingsNavigator';
+import { JournalNavigator } from './JournalNavigator';
+import { CalendarScreen } from '../screens';
 
 export type RootTabsList = {
   Journal: JSX.Element;
@@ -16,11 +15,11 @@ export type RootTabsList = {
 
 const { Navigator, Screen } = createBottomTabNavigator<RootTabsList>();
 
-export default () => (
+export const TabNavigator = () => (
   <NavigationContainer>
     <Navigator tabBar={(props) => <Bottom {...props} />}>
       <Screen name="Journal" component={JournalNavigator} />
-      <Screen name="Calendar" component={CalendarPage} />
+      <Screen name="Calendar" component={CalendarScreen} />
       <Screen name="Learn" component={CardAccessoriesShowcase} />
       <Screen name="Settings" component={SettingsNavigator} />
     </Navigator>

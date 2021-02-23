@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import NewThought from '../pages/NewThoughtPage';
 import { createStackNavigator } from '@react-navigation/stack';
-import JournalPage from '../pages/JournalPage';
+import { JournalScreen, NewThoughtScreen } from '../screens';
 
 export type JournalRoutesList = {
   Journal: JSX.Element;
@@ -11,11 +10,11 @@ export type JournalRoutesList = {
 
 const { Navigator, Screen } = createStackNavigator<JournalRoutesList>();
 
-export default () => (
+export const JournalNavigator = () => (
   <NavigationContainer independent>
     <Navigator headerMode="none">
-      <Screen name="Journal" component={JournalPage} />
-      <Screen name="LogThought" component={NewThought} />
+      <Screen name="Journal" component={JournalScreen} />
+      <Screen name="LogThought" component={NewThoughtScreen} />
     </Navigator>
   </NavigationContainer>
 );

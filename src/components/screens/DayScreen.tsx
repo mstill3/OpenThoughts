@@ -4,13 +4,13 @@ import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native-svg';
 import { View } from 'react-native';
-import { BackIcon } from 'assets/icons';
+import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
-import { CalendarRoutesList } from '../navigators/CalendarNavigator';
+import { CalendarRoutesList } from '../navigators';
 
 type CalendarNavigator = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
-export default () => {
+export const DayScreen = () => {
   const navigation = useNavigation<CalendarNavigator>();
   const navigateBack = () => {
     navigation.goBack();

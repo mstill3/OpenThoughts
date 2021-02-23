@@ -30,7 +30,7 @@ const DayCell = ({ date }, style) => (
   </View>
 );
 
-export default () => {
+export const MyCalendar = () => {
   const [date, setDate] = useState(null);
 
   return (

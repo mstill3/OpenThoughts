@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from '@ui-kitten/components';
-import Calendar from '../atoms/MyCalendar';
+import { MyCalendar } from '../views';
 import style from '../../styles/style';
 
-export default () => (
+export const CalendarScreen = () => (
   <Layout style={style.centeredLayout}>
-    <Calendar />
+    <MyCalendar />
   </Layout>
 );

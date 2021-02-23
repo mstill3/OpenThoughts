@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { Button, Layout } from '@ui-kitten/components';
-import TextInput from '../atoms/TextInput';
+import { TextInput } from '../views';
 import style from '../../styles/style';
-import { JournalRoutesList } from '../navigators/JournalNavigator';
+import { JournalRoutesList } from '../navigators';
 import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Alert } from 'react-native';
-import Log from '../../data/models/Log';
-import { Mood } from '../../data/models/Mood';
-import { load, save } from '../../utils/storage';
+// import { Alert } from 'react-native';
+import { Log, Mood } from '../../models';
+import { save } from '../../utils/storage';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
 
-export default () => {
+export const NewThoughtScreen = () => {
   const navigation = useNavigation<JournalNavigator>();
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
@@ -29,7 +28,7 @@ export default () => {
 
     await save('log', log);
 
-    Alert.alert(a.getNegativeThought());
+    // Alert.alert(a.getNegativeThought());
 
     // load('logg')
     //   .then((logStr) => {

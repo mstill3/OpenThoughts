@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SettingsPage from '../pages/SettingsPage';
-import AboutPage from '../pages/AboutPage';
+import { SettingsScreen, AboutScreen } from '../screens';
 
 export type SettingsRoutesList = {
   Settings: JSX.Element;
@@ -11,11 +10,11 @@ export type SettingsRoutesList = {
 
 const { Navigator, Screen } = createStackNavigator<SettingsRoutesList>();
 
-export default () => (
+export const SettingsNavigator = () => (
   <NavigationContainer independent>
     <Navigator headerMode="none">
-      <Screen name="Settings" component={SettingsPage} />
-      <Screen name="About" component={AboutPage} />
+      <Screen name="Settings" component={SettingsScreen} />
+      <Screen name="About" component={AboutScreen} />
     </Navigator>
   </NavigationContainer>
 );

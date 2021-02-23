@@ -15,7 +15,7 @@ import {
 
 type BottomNavigator = BottomTabBarProps<BottomTabBarOptions>;
 
-export default ({ navigation, state }: BottomNavigator) => {
+export const Bottom = ({ navigation, state }: BottomNavigator) => {
   const { theme } = useContext(ThemeContext);
   const backColor = useMemo(
     () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),
