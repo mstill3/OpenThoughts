@@ -10,6 +10,8 @@ export const logReducer = (state: ILogState = [], action: ILogAction) => {
       return [...state, action.data];
     case LogActionType.REMOVE_LOG:
       return state.filter((log: Log) => log !== action.data);
+    case LogActionType.CLEAR_LOGS:
+      return [];
     default:
       return state;
   }

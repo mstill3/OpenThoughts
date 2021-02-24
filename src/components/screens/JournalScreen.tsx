@@ -28,7 +28,7 @@ export const JournalScreen = () => {
           Log
         </Button>
         {logs.map((log) => (
-          <LogView key={log.getId()} log={log} />
+          <LogView key={log.id} log={log} />
         ))}
       </Layout>
     </View>

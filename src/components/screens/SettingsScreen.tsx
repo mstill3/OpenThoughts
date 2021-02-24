@@ -5,12 +5,17 @@ import { ThemeContext } from '../../theme/theme-context';
 import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators';
-import { AboutIcon } from '../../../assets/icons';
+import { AboutIcon, TrashIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { clearLogsAction } from '../../redux/actions';
 
 type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
 export const SettingsScreen = () => {
+  const dispatch = useDispatch();
+  const clearData = () => dispatch(clearLogsAction());
+
   const navigation = useNavigation<SettingsNavigator>();
   const navigateAbout = () => navigation.navigate('About');
 
@@ -31,6 +36,9 @@ export const SettingsScreen = () => {
       <Toggle checked={lightMode} onChange={onLightModeChange}>
         {lightMode ? 'Light mode' : 'Dark mode'}
       </Toggle>
+      <Button status="danger" accessoryLeft={TrashIcon} onPress={clearData}>
+        Clear Data
+      </Button>
     </Layout>
   );
 };

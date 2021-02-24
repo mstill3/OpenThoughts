@@ -7,6 +7,7 @@ export enum LogActionType {
   ADD_LOG,
   EDIT_LOG,
   REMOVE_LOG,
+  CLEAR_LOGS,
 }
 
 // ====================
@@ -24,6 +25,9 @@ export type ILogAction =
   | {
       type: LogActionType.REMOVE_LOG;
       data: Log;
+    }
+  | {
+      type: LogActionType.CLEAR_LOGS;
     };
 
 // ============
@@ -42,4 +46,8 @@ export const editLogAction = (log: Log): ILogAction => ({
 export const removeLogAction = (log: Log): ILogAction => ({
   type: LogActionType.REMOVE_LOG,
   data: log,
+});
+
+export const clearLogsAction = (): ILogAction => ({
+  type: LogActionType.CLEAR_LOGS,
 });

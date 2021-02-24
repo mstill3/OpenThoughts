@@ -1,10 +1,16 @@
-import { createStore, compose } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
 import rootReducer from './rootReducer';
+import AsyncStorage from '@react-native-community/async-storage';
 
-// connects with chromeDevTools if env is dev
-const composeEnhancers =
-  process.env.NODE_ENV === 'development' ? composeWithDevTools({}) : compose;
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+};
 
-// create store from rootReducer
-export default createStore(rootReducer, composeEnhancers());
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(persistedReducer);
+
+export default store;
+export const persistor = persistStore(store);

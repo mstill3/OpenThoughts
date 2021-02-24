@@ -10,9 +10,9 @@ interface Props {
 export const LogView = ({ log }: Props) => {
   return (
     <View>
-      <Text> {log.getCategory()} </Text>
-      <Text> {log.getNegativeThought()} </Text>
-      <Text> {log.getReplacementThought()} </Text>
+      <Text> {log.category} </Text>
+      <Text> {log.negativeThought} </Text>
+      <Text> {log.replacementThought} </Text>
     </View>
   );
 };

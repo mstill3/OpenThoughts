@@ -8,7 +8,7 @@ import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 // import { Alert } from 'react-native';
-import { Log, Mood } from '../../models';
+import { buildLog, Log, Mood } from '../../models';
 import { addLogAction } from '../../redux/actions';
 // import { save } from '../../utils/storage';
 
@@ -25,7 +25,7 @@ export const NewThoughtScreen = () => {
   const addLog = (log: Log) => dispatch(addLogAction(log));
 
   const submit = () => {
-    const log = new Log(
+    const log = buildLog(
       category,
       Mood.GREAT,
       negativeThought,

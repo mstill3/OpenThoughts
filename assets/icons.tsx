@@ -12,3 +12,4 @@ export const SettingsIcon = (props): IconElement => getEvaIcon('settings-outline
 export const AddIcon = (props): IconElement => getEvaIcon('plus', props);
 export const BackIcon = (props): IconElement => getEvaIcon('arrow-back-outline', props);
 export const AboutIcon = (props): IconElement => getEvaIcon('info', props);
+export const TrashIcon = (props): IconElement => getEvaIcon('trash-2-outline', props);
