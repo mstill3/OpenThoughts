@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Button, Layout } from '@ui-kitten/components';
 import { TextInput } from '../views';
 import style from '../../styles/style';
@@ -8,41 +9,30 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 // import { Alert } from 'react-native';
 import { Log, Mood } from '../../models';
-import { save } from '../../utils/storage';
+import { addLogAction } from '../../redux/actions';
+// import { save } from '../../utils/storage';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
 
 export const NewThoughtScreen = () => {
   const navigation = useNavigation<JournalNavigator>();
+  const dispatch = useDispatch();
+
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
   const [replacementThought, setReplacementThought] = useState('');
 
-  const submit = async () => {
+  const addLog = (log: Log) => dispatch(addLogAction(log));
+
+  const submit = () => {
     const log = new Log(
       category,
       Mood.GREAT,
       negativeThought,
       replacementThought,
     );
-
-    await save('log', log);
-
-    // Alert.alert(a.getNegativeThought());
-
-    // load('logg')
-    //   .then((logStr) => {
-    //     Alert.alert(logStr);
-    //     // const l: Log = JSON.parse(logStr);
-    //     // Alert.alert(l.getNegativeThought());
-    //   })
-    //   .catch((e) => {
-    //     Alert.alert(e);
-    //   });
-
-    // AsyncStorage.setItem('log', JSON.stringify(log));
-    // AsyncStorage.getItem('log')
-    // alert(`${category} ${negativeThought} ${replacementThought}`);
+    addLog(log);
+    navigateBack();
   };
 
   const navigateBack = () => navigation.goBack();

@@ -20,6 +20,7 @@
     "@react-navigation/bottom-tabs": "^5.11.7",
     "@react-navigation/native": "^5.9.2",
     "@react-navigation/stack": "^5.14.2",
+    "@redux-offline/redux-offline": "^2.6.0-native.0",
     "@ui-kitten/components": "5.0.0",
     "@ui-kitten/eva-icons": "5.0.0",
     "expo": "^40.0.1",
@@ -28,6 +29,7 @@
     "react-dom": "16.13.1",
     "react-native": "^0.63.4",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-get-random-values": "^1.6.0",
     "react-native-keychain": "^6.2.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
@@ -37,7 +39,8 @@
     "react-native-web": "~0.13.12",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -48,6 +51,7 @@
     "@types/react-native-vector-icons": "^6.4.6",
     "@types/react-redux": "^7.1.16",
     "@types/react-test-renderer": "16.9.2",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "@ui-kitten/metro-config": "5.0.0",

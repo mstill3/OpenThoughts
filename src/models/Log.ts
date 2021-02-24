@@ -1,6 +1,9 @@
+import 'react-native-get-random-values';
+import { v4 as uuid } from 'uuid';
 import { Mood } from './Mood';
 
 export class Log {
+  private id: string;
   private createdAt: Date;
   private updatedAt: Date;
   private mood: Mood;
@@ -15,6 +18,7 @@ export class Log {
       iLog.negativeThought,
       iLog.replacementThought,
     );
+    l.setId(iLog.id);
     l.setCreatedAt(iLog.createdAt);
     l.setUpdatedAt(iLog.updatedAt);
     return l;
@@ -26,11 +30,16 @@ export class Log {
     negativeThought: string,
     replacementThought: string,
   ) {
-    this.createdAt = new Date();
-    this.category = category;
-    this.mood = mood;
-    this.negativeThought = negativeThought;
-    this.replacementThought = replacementThought;
+    this.setId(uuid());
+    this.setCreatedAt(new Date());
+    this.setCategory(category);
+    this.setMood(mood);
+    this.setNegativeThought(negativeThought);
+    this.setReplacementThought(replacementThought);
+  }
+
+  setId(id: string): void {
+    this.id = id;
   }
 
   setCreatedAt(date: Date): void {
@@ -55,6 +64,10 @@ export class Log {
 
   setReplacementThought(replacementThought: string): void {
     this.replacementThought = replacementThought;
+  }
+
+  getId(): string {
+    return this.id;
   }
 
   getCreatedAt(): Date {
