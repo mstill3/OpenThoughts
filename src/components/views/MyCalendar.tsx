@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     ...circleStyle,
     backgroundColor: MoodColors.awful,
   },
-  noneCircle: {
-    ...circleStyle,
-    backgroundColor: MoodColors.none,
-  },
+  // noneCircle: {
+  //   ...circleStyle,
+  //   backgroundColor: MoodColors.none,
+  // },
 });

@@ -36,7 +36,11 @@ export const NewThoughtScreen = () => {
 
   return (
     <Layout style={style.centeredLayout}>
-      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
+      <Button
+        appearance="outline"
+        status="info"
+        accessoryLeft={BackIcon}
+        onPress={navigateBack}>
         Back
       </Button>
       <TextInput
@@ -58,7 +62,10 @@ export const NewThoughtScreen = () => {
         onChangeText={setReplacementThought}
       />
       <MoodOptionsView mood={mood} setMood={setMood} />
-      <Button onPress={submit} accessibilityLabel="Log this thought">
+      <Button
+        appearance="outline"
+        onPress={submit}
+        accessibilityLabel="Log this thought">
         Submit
       </Button>
     </Layout>

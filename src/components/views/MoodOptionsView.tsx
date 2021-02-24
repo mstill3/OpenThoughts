@@ -16,17 +16,21 @@ interface Props {
 }
 
 export const MoodOptionsView = ({ mood, setMood }: Props) => {
-  const getStatus = () => {
-    if (mood === Mood.AWFUL) {
-      return 'danger';
-    } else if (mood === Mood.BAD) {
-      return 'warning';
-    } else if (mood === Mood.OKAY) {
-      return 'success';
-    } else if (mood === Mood.GOOD) {
-      return 'info';
-    } else if (mood === Mood.GREAT) {
-      return 'primary';
+  const getStatus = (moodButton: Mood) => {
+    if (mood === moodButton) {
+      if (mood === Mood.AWFUL) {
+        return 'danger';
+      } else if (mood === Mood.BAD) {
+        return 'warning';
+      } else if (mood === Mood.OKAY) {
+        return 'success';
+      } else if (mood === Mood.GOOD) {
+        return 'info';
+      } else if (mood === Mood.GREAT) {
+        return 'primary';
+      } else {
+        return 'basic';
+      }
     } else {
       return 'basic';
     }
@@ -35,22 +39,43 @@ export const MoodOptionsView = ({ mood, setMood }: Props) => {
   return (
     <View>
       <Layout style={styles.container} level="1">
-        <ButtonGroup style={styles.buttonGroup} status={getStatus()}>
-          {/* <AwfulIcon /> */}
-          <Button
-            accessoryLeft={AwfulIcon}
-            onPress={() => setMood(Mood.AWFUL)}
-          />
-          <Button accessoryLeft={BadIcon} onPress={() => setMood(Mood.BAD)} />
-          <Button accessoryLeft={OkayIcon} onPress={() => setMood(Mood.OKAY)} />
-          <Button accessoryLeft={GoodIcon} onPress={() => setMood(Mood.GOOD)} />
-          <Button
-            accessoryLeft={GreatIcon}
-            onPress={() => setMood(Mood.GREAT)}
-          />
-        </ButtonGroup>
+        <Button
+          accessoryLeft={AwfulIcon}
+          onPress={() => setMood(Mood.AWFUL)}
+          size="giant"
+          status={getStatus(Mood.AWFUL)}
+          appearance="ghost"
+        />
+        <Button
+          accessoryLeft={BadIcon}
+          onPress={() => setMood(Mood.BAD)}
+          size="giant"
+          status={getStatus(Mood.BAD)}
+          appearance="ghost"
+        />
+        <Button
+          accessoryLeft={OkayIcon}
+          onPress={() => setMood(Mood.OKAY)}
+          size="giant"
+          status={getStatus(Mood.OKAY)}
+          appearance="ghost"
+        />
+        <Button
+          accessoryLeft={GoodIcon}
+          onPress={() => setMood(Mood.GOOD)}
+          size="giant"
+          status={getStatus(Mood.GOOD)}
+          appearance="ghost"
+        />
+        <Button
+          accessoryLeft={GreatIcon}
+          onPress={() => setMood(Mood.GREAT)}
+          size="giant"
+          status={getStatus(Mood.GREAT)}
+          appearance="ghost"
+        />
       </Layout>
-      <Text> {mood} </Text>
+      {/* <Text> {mood} </Text> */}
     </View>
   );
 };

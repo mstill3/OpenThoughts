@@ -15,6 +15,18 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: 15,
   },
+  padded: {
+    margin: 10,
+  },
+  veryPadded: {
+    margin: 40,
+  },
+  verySidePadded: {
+    marginLeft: 40,
+    marginRight: 40,
+    marginTop: 10,
+    marginBottom: 10,
+  },
   topContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

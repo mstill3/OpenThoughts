@@ -14,10 +14,23 @@ export const AboutScreen = () => {
 
   return (
     <Layout style={style.centeredLayout}>
-      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
+      <Button
+        style={style.padded}
+        appearance="outline"
+        status="info"
+        accessoryLeft={BackIcon}
+        onPress={navigateBack}>
         Back
       </Button>
-      <Text> Version 0.0.1 </Text>
+      <Text style={style.veryPadded}>
+        I wanted to create an app to help people cope with negative thoughts. I
+        want to keep this passion project open source, completely free, and the
+        data only saved locally - Matt Stillwell
+      </Text>
+      <Text style={style.verySidePadded}>
+        If you like what I am doing feel free to contribute at
+        https://github.com/mstill3/OpenThoughts
+      </Text>
     </Layout>
   );
 };

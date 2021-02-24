@@ -29,14 +29,27 @@ export const SettingsScreen = () => {
 
   return (
     <Layout style={style.centeredLayout}>
-      <Text> Version 0.0.1 </Text>
-      <Button status="info" accessoryLeft={AboutIcon} onPress={navigateAbout}>
-        About
-      </Button>
-      <Toggle checked={lightMode} onChange={onLightModeChange}>
+      <Text style={style.padded}> Version 0.0.1 </Text>
+      <Toggle
+        style={style.padded}
+        checked={lightMode}
+        onChange={onLightModeChange}>
         {lightMode ? 'Light mode' : 'Dark mode'}
       </Toggle>
-      <Button status="danger" accessoryLeft={TrashIcon} onPress={clearData}>
+      <Button
+        appearance="outline"
+        style={style.padded}
+        status="info"
+        accessoryLeft={AboutIcon}
+        onPress={navigateAbout}>
+        About
+      </Button>
+      <Button
+        appearance="outline"
+        style={style.padded}
+        status="danger"
+        accessoryLeft={TrashIcon}
+        onPress={clearData}>
         Clear Data
       </Button>
     </Layout>

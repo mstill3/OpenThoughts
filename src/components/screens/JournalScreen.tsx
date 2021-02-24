@@ -22,6 +22,7 @@ export const JournalScreen = () => {
       <Divider />
       <Layout style={style.centeredLayout}>
         <Button
+          appearance="outline"
           status="danger"
           accessoryLeft={AddIcon}
           onPress={navigateNewThought}>
