@@ -10,6 +10,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 // import { Alert } from 'react-native';
 import { buildLog, Log, Mood } from '../../models';
 import { addLogAction } from '../../redux/actions';
+import { MoodOptionsView } from '../views/MoodOptionsView';
 // import { save } from '../../utils/storage';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
@@ -18,6 +19,7 @@ export const NewThoughtScreen = () => {
   const navigation = useNavigation<JournalNavigator>();
   const dispatch = useDispatch();
 
+  const [mood, setMood] = useState<Mood>(Mood.UNSET);
   const [category, setCategory] = useState('');
   const [negativeThought, setNegativeThought] = useState('');
   const [replacementThought, setReplacementThought] = useState('');
@@ -25,12 +27,7 @@ export const NewThoughtScreen = () => {
   const addLog = (log: Log) => dispatch(addLogAction(log));
 
   const submit = () => {
-    const log = buildLog(
-      category,
-      Mood.GREAT,
-      negativeThought,
-      replacementThought,
-    );
+    const log = buildLog(category, mood, negativeThought, replacementThought);
     addLog(log);
     navigateBack();
   };
@@ -60,6 +57,7 @@ export const NewThoughtScreen = () => {
         text={replacementThought}
         onChangeText={setReplacementThought}
       />
+      <MoodOptionsView mood={mood} setMood={setMood} />
       <Button onPress={submit} accessibilityLabel="Log this thought">
         Submit
       </Button>

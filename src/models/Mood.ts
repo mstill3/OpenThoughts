@@ -1,4 +1,5 @@
 export enum Mood {
+  UNSET = 'UNSET',
   GREAT = 'GREAT',
   GOOD = 'GOOD',
   OKAY = 'OKAY',

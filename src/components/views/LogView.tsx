@@ -13,6 +13,7 @@ export const LogView = ({ log }: Props) => {
       <Text> {log.category} </Text>
       <Text> {log.negativeThought} </Text>
       <Text> {log.replacementThought} </Text>
+      <Text> {log.mood} </Text>
     </View>
   );
 };
