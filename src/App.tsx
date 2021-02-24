@@ -10,11 +10,13 @@ import { initFonts } from '../assets/fonts';
 import { Provider as StateProvider } from 'react-redux';
 import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { LoadingScreen } from './components/screens';
 
 export default () => {
   const [theme, setTheme] = useState<AppTheme>(AppTheme.dark);
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  const toggleTheme = () => setTheme(theme === AppTheme.light ? AppTheme.dark : AppTheme.light);
+  const toggleTheme = () =>
+    setTheme(theme === AppTheme.light ? AppTheme.dark : AppTheme.light);
   const backColor = useMemo(
     () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),
     [theme],
@@ -29,23 +31,25 @@ export default () => {
   }, []);
 
   return (
-    fontsLoaded && (
-      <StateProvider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <SafeAreaView
-            style={{ flex: 1, backgroundColor: eva[theme][backColor] }}>
-            <StatusBar
-              barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
-            />
-            <IconRegistry icons={EvaIconsPack} />
-            <ThemeContext.Provider value={{ theme, toggleTheme }}>
-              <ApplicationProvider {...eva} theme={eva[theme]}>
+    <ApplicationProvider {...eva} theme={eva[theme]}>
+      {fontsLoaded ? (
+        <StateProvider store={store}>
+          <PersistGate loading={<LoadingScreen />} persistor={persistor}>
+            <SafeAreaView
+              style={{ flex: 1, backgroundColor: eva[theme][backColor] }}>
+              <StatusBar
+                barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
+              />
+              <IconRegistry icons={EvaIconsPack} />
+              <ThemeContext.Provider value={{ theme, toggleTheme }}>
                 <TabNavigator />
-              </ApplicationProvider>
-            </ThemeContext.Provider>
-          </SafeAreaView>
-        </PersistGate>
-      </StateProvider>
-    )
+              </ThemeContext.Provider>
+            </SafeAreaView>
+          </PersistGate>
+        </StateProvider>
+      ) : (
+        <LoadingScreen />
+      )}
+    </ApplicationProvider>
   );
 };
