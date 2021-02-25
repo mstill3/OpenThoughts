@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Button, ButtonGroup, Layout } from '@ui-kitten/components';
+import { Button, Layout } from '@ui-kitten/components';
 import {
   AwfulIcon,
   BadIcon,

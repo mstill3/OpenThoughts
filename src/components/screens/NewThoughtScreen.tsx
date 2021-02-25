@@ -37,7 +37,6 @@ export const NewThoughtScreen = () => {
   return (
     <Layout style={style.centeredLayout}>
       <Button
-        appearance="outline"
         status="info"
         accessoryLeft={BackIcon}
         onPress={navigateBack}>
@@ -63,7 +62,6 @@ export const NewThoughtScreen = () => {
       />
       <MoodOptionsView mood={mood} setMood={setMood} />
       <Button
-        appearance="outline"
         onPress={submit}
         accessibilityLabel="Log this thought">
         Submit

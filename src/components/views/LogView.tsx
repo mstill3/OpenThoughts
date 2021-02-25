@@ -1,7 +1,7 @@
 import React from 'react';
 import { Log } from '../../models';
-import { Text } from '@ui-kitten/components';
-import { View } from 'react-native';
+import { Card, Text } from '@ui-kitten/components';
+import style from '../../styles/style';
 
 interface Props {
   log: Log;
@@ -9,11 +9,11 @@ interface Props {
 
 export const LogView = ({ log }: Props) => {
   return (
-    <View>
+    <Card>
       <Text> {log.category} </Text>
       <Text> {log.negativeThought} </Text>
       <Text> {log.replacementThought} </Text>
       <Text> {log.mood} </Text>
-    </View>
+    </Card>
   );
 };

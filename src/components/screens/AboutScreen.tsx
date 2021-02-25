@@ -16,7 +16,6 @@ export const AboutScreen = () => {
     <Layout style={style.centeredLayout}>
       <Button
         style={style.padded}
-        appearance="outline"
         status="info"
         accessoryLeft={BackIcon}
         onPress={navigateBack}>

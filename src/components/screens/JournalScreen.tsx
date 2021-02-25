@@ -7,30 +7,25 @@ import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators';
 import { AddIcon } from '../../../assets/icons';
-import { selectLogs } from '../../redux/selectors';
-import { LogView } from '../views';
+import { LogListView } from '../views/LogListView';
 
 type JournalNavigator = StackNavigationProp<JournalRoutesList, 'Journal'>;
 
 export const JournalScreen = () => {
   const navigation = useNavigation<JournalNavigator>();
   const navigateNewThought = () => navigation.navigate('LogThought');
-  const logs = useSelector(selectLogs);
 
   return (
     <View style={style.flexed}>
       <Divider />
-      <Layout style={style.centeredLayout}>
+      <Layout style={style.flexed}>
         <Button
-          appearance="outline"
-          status="danger"
+          status="info"
           accessoryLeft={AddIcon}
           onPress={navigateNewThought}>
           Log
         </Button>
-        {logs.map((log) => (
-          <LogView key={log.id} log={log} />
-        ))}
+        <LogListView />
       </Layout>
     </View>
   );

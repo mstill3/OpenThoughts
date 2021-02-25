@@ -37,7 +37,6 @@ export const SettingsScreen = () => {
         {lightMode ? 'Light mode' : 'Dark mode'}
       </Toggle>
       <Button
-        appearance="outline"
         style={style.padded}
         status="info"
         accessoryLeft={AboutIcon}
@@ -45,7 +44,6 @@ export const SettingsScreen = () => {
         About
       </Button>
       <Button
-        appearance="outline"
         style={style.padded}
         status="danger"
         accessoryLeft={TrashIcon}
