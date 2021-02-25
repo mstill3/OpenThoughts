@@ -1,7 +1,6 @@
 import React from 'react';
 import { Log } from '../../models';
 import { Card, Text } from '@ui-kitten/components';
-import style from '../../styles/style';
 
 interface Props {
   log: Log;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { List } from '@ui-kitten/components';
 import { useSelector } from 'react-redux';
-import { selectLogs } from '../../redux/selectors';
+import { selectDailyLogs } from '../../redux/selectors';
 import { LogView } from './LogView';
 import { StyleSheet } from 'react-native';
 
 export const LogListView = () => {
-  const logs = useSelector(selectLogs);
+  const logs = useSelector(selectDailyLogs(new Date()));
   const renderLog = ({ item, index }) => <LogView key={index} log={item} />;
 
   return (
