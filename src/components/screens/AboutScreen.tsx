@@ -6,10 +6,10 @@ import { SettingsRoutesList } from '../navigators';
 import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 
-type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'About'>;
+type SettingsNavigation = StackNavigationProp<SettingsRoutesList, 'About'>;
 
 export const AboutScreen = () => {
-  const navigation = useNavigation<SettingsNavigator>();
+  const navigation = useNavigation<SettingsNavigation>();
   const navigateBack = () => navigation.goBack();
 
   return (

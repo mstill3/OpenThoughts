@@ -8,10 +8,10 @@ import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { CalendarRoutesList } from '../navigators';
 
-type CalendarNavigator = StackNavigationProp<CalendarRoutesList, 'Day'>;
+type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
 export const DayScreen = () => {
-  const navigation = useNavigation<CalendarNavigator>();
+  const navigation = useNavigation<CalendarNavigation>();
   const navigateBack = () => navigation.goBack();
 
   return (

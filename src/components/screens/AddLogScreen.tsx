@@ -7,16 +7,14 @@ import { JournalRoutesList } from '../navigators';
 import { BackIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-// import { Alert } from 'react-native';
 import { buildLog, Log, Mood } from '../../models';
 import { addLogAction } from '../../redux/actions';
 import { MoodOptionsView } from '../views/MoodOptionsView';
-// import { save } from '../../utils/storage';
 
-type JournalNavigator = StackNavigationProp<JournalRoutesList, 'LogThought'>;
+type JournalNavigation = StackNavigationProp<JournalRoutesList, 'AddLog'>;
 
-export const NewThoughtScreen = () => {
-  const navigation = useNavigation<JournalNavigator>();
+export const AddLogScreen = () => {
+  const navigation = useNavigation<JournalNavigation>();
   const dispatch = useDispatch();
 
   const [mood, setMood] = useState<Mood>(Mood.UNSET);
@@ -36,10 +34,7 @@ export const NewThoughtScreen = () => {
 
   return (
     <Layout style={style.centeredLayout}>
-      <Button
-        status="info"
-        accessoryLeft={BackIcon}
-        onPress={navigateBack}>
+      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
         Back
       </Button>
       <TextInput
@@ -61,9 +56,7 @@ export const NewThoughtScreen = () => {
         onChangeText={setReplacementThought}
       />
       <MoodOptionsView mood={mood} setMood={setMood} />
-      <Button
-        onPress={submit}
-        accessibilityLabel="Log this thought">
+      <Button onPress={submit} accessibilityLabel="Log this thought">
         Submit
       </Button>
     </Layout>

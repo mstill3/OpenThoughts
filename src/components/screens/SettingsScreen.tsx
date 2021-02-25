@@ -10,13 +10,13 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { clearLogsAction } from '../../redux/actions';
 
-type SettingsNavigator = StackNavigationProp<SettingsRoutesList, 'Settings'>;
+type SettingsNavigation = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
 export const SettingsScreen = () => {
   const dispatch = useDispatch();
   const clearData = () => dispatch(clearLogsAction());
 
-  const navigation = useNavigation<SettingsNavigator>();
+  const navigation = useNavigation<SettingsNavigation>();
   const navigateAbout = () => navigation.navigate('About');
 
   const themeContext = useContext(ThemeContext);

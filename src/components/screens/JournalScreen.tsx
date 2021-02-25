@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Layout, Button, Divider } from '@ui-kitten/components';
@@ -9,20 +8,17 @@ import { JournalRoutesList } from '../navigators';
 import { AddIcon } from '../../../assets/icons';
 import { LogListView } from '../views/LogListView';
 
-type JournalNavigator = StackNavigationProp<JournalRoutesList, 'Journal'>;
+type JournalNavigation = StackNavigationProp<JournalRoutesList, 'Journal'>;
 
 export const JournalScreen = () => {
-  const navigation = useNavigation<JournalNavigator>();
-  const navigateNewThought = () => navigation.navigate('LogThought');
+  const navigation = useNavigation<JournalNavigation>();
+  const navigateAddLog = () => navigation.navigate('AddLog');
 
   return (
     <View style={style.flexed}>
       <Divider />
       <Layout style={style.flexed}>
-        <Button
-          status="info"
-          accessoryLeft={AddIcon}
-          onPress={navigateNewThought}>
+        <Button status="info" accessoryLeft={AddIcon} onPress={navigateAddLog}>
           Log
         </Button>
         <LogListView />
