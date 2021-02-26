@@ -9,12 +9,17 @@ import { AboutIcon, TrashIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { clearLogsAction } from '../../redux/actions';
+import { ConfirmAlert } from '../views/ConfirmAlert';
 
 type SettingsNavigation = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
 export const SettingsScreen = () => {
   const dispatch = useDispatch();
-  const clearData = () => dispatch(clearLogsAction());
+  const clearData = () => {
+    ConfirmAlert('Are you sure?', 'This will remove all logs', () =>
+      dispatch(clearLogsAction()),
+    );
+  };
 
   const navigation = useNavigation<SettingsNavigation>();
   const navigateAbout = () => navigation.navigate('About');
