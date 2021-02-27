@@ -4,7 +4,7 @@
 import { AppTheme } from '../../models';
 
 export enum SettingActionType {
-  SET_THEME,
+  SET_THEME = 'SET_THEME',
 }
 
 // ====================

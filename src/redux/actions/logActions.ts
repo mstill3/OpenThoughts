@@ -4,10 +4,10 @@
 import { Log } from '../../models';
 
 export enum LogActionType {
-  ADD_LOG,
-  EDIT_LOG,
-  REMOVE_LOG,
-  CLEAR_LOGS,
+  ADD_LOG = 'ADD_LOG',
+  EDIT_LOG = 'EDIT_LOG',
+  REMOVE_LOG = 'REMOVE_LOG',
+  CLEAR_LOGS = 'CLEAR_LOGS',
 }
 
 // ====================
