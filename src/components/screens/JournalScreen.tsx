@@ -6,7 +6,7 @@ import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { JournalRoutesList } from '../navigators';
 import { AddIcon } from '../../../assets/icons';
-import { LogListView } from '../views/LogListView';
+import { LogListView } from '../views';
 
 type JournalNavigation = StackNavigationProp<JournalRoutesList, 'Journal'>;
 

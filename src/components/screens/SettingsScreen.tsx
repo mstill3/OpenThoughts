@@ -1,19 +1,21 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { Button, Layout, Text } from '@ui-kitten/components';
 import { Toggle } from '@ui-kitten/components';
-import { ThemeContext } from '../../theme/theme-context';
 import style from '../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../navigators';
 import { AboutIcon, TrashIcon } from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
-import { clearLogsAction } from '../../redux/actions';
-import { ConfirmAlert } from '../views/ConfirmAlert';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearLogsAction, setThemeAction } from '../../redux/actions';
+import { ConfirmAlert } from '../views';
+import { selectTheme } from '../../redux/selectors';
 
 type SettingsNavigation = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
 export const SettingsScreen = () => {
+  const theme = useSelector(selectTheme);
+
   const dispatch = useDispatch();
   const clearData = () => {
     ConfirmAlert('Are you sure?', 'This will remove all logs', () =>
@@ -24,22 +26,17 @@ export const SettingsScreen = () => {
   const navigation = useNavigation<SettingsNavigation>();
   const navigateAbout = () => navigation.navigate('About');
 
-  const themeContext = useContext(ThemeContext);
-
-  const [lightMode, setLightMode] = useState(false);
-  const onLightModeChange = (isChecked: boolean) => {
-    setLightMode(isChecked);
-    themeContext.toggleTheme();
-  };
+  const onLightModeChange = (isChecked: boolean) =>
+    dispatch(setThemeAction(isChecked ? 'light' : 'dark'));
 
   return (
     <Layout style={style.centeredLayout}>
       <Text style={style.padded}> Version 0.0.1 </Text>
       <Toggle
         style={style.padded}
-        checked={lightMode}
+        checked={theme === 'light'}
         onChange={onLightModeChange}>
-        {lightMode ? 'Light mode' : 'Dark mode'}
+        {theme === 'light' ? 'Light mode' : 'Dark mode'}
       </Toggle>
       <Button
         style={style.padded}

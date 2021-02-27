@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ImageProps } from 'react-native';
 import {
   StyleType,
@@ -8,8 +8,9 @@ import {
   TopNavigationProps,
 } from '@ui-kitten/components';
 import { BackIcon } from '../../../assets/icons';
-import { ThemeContext } from '../../theme/theme-context';
 import * as eva from '@eva-design/eva';
+import { useSelector } from 'react-redux';
+import { selectTheme } from '../../redux/selectors';
 
 export interface ToolbarProps extends TopNavigationProps {
   backIcon?: (style: StyleType) => React.ReactElement<ImageProps>;
@@ -19,7 +20,7 @@ export interface ToolbarProps extends TopNavigationProps {
 }
 
 export const Toolbar = (props: ToolbarProps): TopNavigationActionElement => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useSelector(selectTheme);
   const { onBackPress, ...topNavigationProps } = props;
 
   const backColor = useMemo(

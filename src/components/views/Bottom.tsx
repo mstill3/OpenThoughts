@@ -1,7 +1,6 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-import { ThemeContext } from '../../theme/theme-context';
 import {
   BulbIcon,
   CalendarIcon,
@@ -12,11 +11,13 @@ import {
   BottomTabBarOptions,
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
+import { useSelector } from 'react-redux';
+import { selectTheme } from '../../redux/selectors';
 
 type BottomNavigator = BottomTabBarProps<BottomTabBarOptions>;
 
 export const Bottom = ({ navigation, state }: BottomNavigator) => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useSelector(selectTheme);
   const backColor = useMemo(
     () => (theme === 'dark' ? 'color-basic-900' : 'color-basic-300'),
     [theme],

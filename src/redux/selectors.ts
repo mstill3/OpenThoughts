@@ -5,3 +5,5 @@ import { IRootState } from './rootReducer';
 export const selectLogs = (state: IRootState) => state.logs;
 export const selectDailyLogs = (date: Date) => (state: IRootState) =>
   state.logs.filter((log) => sameDay(date, new Date(log.createdAt)));
+
+export const selectTheme = (state: IRootState) => state.settings.theme;

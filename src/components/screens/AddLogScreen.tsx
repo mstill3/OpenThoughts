@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, Layout } from '@ui-kitten/components';
-import { TextInput } from '../views';
+import { TextInput, MoodOptionsView } from '../views';
 import style from '../../styles/style';
 import { JournalRoutesList } from '../navigators';
 import { BackIcon } from '../../../assets/icons';
@@ -9,7 +9,6 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { buildLog, Log, Mood } from '../../models';
 import { addLogAction } from '../../redux/actions';
-import { MoodOptionsView } from '../views/MoodOptionsView';
 
 type JournalNavigation = StackNavigationProp<JournalRoutesList, 'AddLog'>;
 
