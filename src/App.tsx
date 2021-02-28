@@ -2,21 +2,21 @@ import React, { useEffect, useMemo, useState } from 'react';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { TabNavigator } from './src/components/navigators';
+import { TabNavigator } from './components/navigators';
 import { StatusBar } from 'react-native';
-import { initFonts } from './assets/fonts';
+import { initFonts } from '../assets/fonts';
 import { useSelector } from 'react-redux';
-import { persistor } from './src/redux/store';
+import { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { LoadingScreen } from './src/components/screens';
+import { LoadingScreen } from './components/screens';
 import {
   EvaIconsPack,
   MaterialIconsPack,
   FeatherIconsPack,
-} from './assets/icons';
-import { selectTheme } from './src/redux/selectors';
+} from '../assets/icons';
+import { selectTheme } from './redux/selectors';
 import { Provider as StateProvider } from 'react-redux';
-import store from './src/redux/store';
+import store from './redux/store';
 
 const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
