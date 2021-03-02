@@ -1,15 +1,15 @@
 import React from 'react';
 import { Button, Layout, Text } from '@ui-kitten/components';
 import { Toggle } from '@ui-kitten/components';
-import style from '../../styles/style';
+import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { SettingsRoutesList } from '../navigators';
-import { AboutIcon, TrashIcon } from '../../../assets/icons';
+import { SettingsRoutesList } from '../../navigators';
+import { AboutIcon, TrashIcon } from '../../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearLogsAction, setThemeAction } from '../../redux/actions';
-import { ConfirmAlert } from '../views';
-import { selectTheme } from '../../redux/selectors';
+import { clearLogsAction, setThemeAction } from '../../../redux/actions';
+import { ConfirmAlert } from '../../views';
+import { selectTheme } from '../../../redux/selectors';
 
 type SettingsNavigation = StackNavigationProp<SettingsRoutesList, 'Settings'>;
 
@@ -30,7 +30,7 @@ export const SettingsScreen = () => {
     dispatch(setThemeAction(isChecked ? 'light' : 'dark'));
 
   return (
-    <Layout style={style.centeredLayout}>
+    <Layout style={style.flexed}>
       <Text style={style.padded}> Version 0.0.1 </Text>
       <Toggle
         style={style.padded}

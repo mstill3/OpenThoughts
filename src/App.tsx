@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { TabNavigator } from './components/navigators';
+import { TabNavigator } from './TabNavigator';
 import { StatusBar } from 'react-native';
 import { initFonts } from '../assets/fonts';
 import { useSelector } from 'react-redux';

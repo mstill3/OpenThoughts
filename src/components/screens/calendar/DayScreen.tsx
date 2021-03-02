@@ -1,12 +1,12 @@
 import React from 'react';
 import { Layout, Button, Divider } from '@ui-kitten/components';
-import style from '../../styles/style';
+import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native-svg';
 import { View } from 'react-native';
-import { BackIcon } from '../../../assets/icons';
+import { BackIcon } from '../../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
-import { CalendarRoutesList } from '../navigators';
+import { CalendarRoutesList } from '../../navigators';
 
 type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Day'>;
 

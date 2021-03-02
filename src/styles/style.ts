@@ -9,6 +9,11 @@ export default StyleSheet.create({
   flexed: {
     flex: 1,
   },
+  flexedMiddle: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 30,
+  },
   textInput: {
     flex: 0,
     justifyContent: 'center',

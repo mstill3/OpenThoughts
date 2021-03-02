@@ -5,7 +5,7 @@ import { CalendarScreen, DayScreen } from '../screens';
 
 export type CalendarRoutesList = {
   Calendar: JSX.Element;
-  Day: JSX.Element;
+  Day: { day: Date };
 };
 
 const { Navigator, Screen } = createStackNavigator<CalendarRoutesList>();

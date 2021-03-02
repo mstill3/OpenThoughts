@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Icon, IconElement } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';

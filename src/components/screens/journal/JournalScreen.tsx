@@ -2,11 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Layout, Button, Divider } from '@ui-kitten/components';
-import style from '../../styles/style';
+import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { JournalRoutesList } from '../navigators';
-import { AddIcon } from '../../../assets/icons';
-import { LogListView } from '../views';
+import { JournalRoutesList } from '../../navigators';
+import { AddIcon } from '../../../../assets/icons';
+import { LogListView } from '../../views';
 
 type JournalNavigation = StackNavigationProp<JournalRoutesList, 'Journal'>;
 
