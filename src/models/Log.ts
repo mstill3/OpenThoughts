@@ -1,28 +1,27 @@
-import 'react-native-get-random-values';
-import { v4 as uuid } from 'uuid';
 import { Mood } from './Mood';
 
 export interface Log {
-  id: string;
   createdAt: Date;
   updatedAt: Date;
-  mood: Mood;
   category: string;
   negativeThought: string;
+  irrationalThoughtPattern: string;
   replacementThought: string;
+  mood: Mood;
 }
 
 export const buildLog = (
   category: string,
-  mood: Mood,
   negativeThought: string,
+  irrationalThoughtPattern: string,
   replacementThought: string,
+  mood: Mood,
 ): Log => ({
-  id: uuid(),
   createdAt: new Date(),
   updatedAt: new Date(),
-  mood: mood,
   category: category,
   negativeThought: negativeThought,
+  irrationalThoughtPattern: irrationalThoughtPattern,
   replacementThought: replacementThought,
+  mood: mood,
 });

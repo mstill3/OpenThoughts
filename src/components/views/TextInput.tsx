@@ -3,6 +3,7 @@ import { Input, Layout } from '@ui-kitten/components';
 import style from '../../styles/style';
 
 interface Props {
+  disabled?: boolean;
   label?: string;
   placeholder?: string;
   text: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export const TextInput = ({
+  disabled,
   text,
   onChangeText,
   placeholder,
@@ -18,6 +20,7 @@ export const TextInput = ({
   return (
     <Layout style={style.textInput}>
       <Input
+        disabled={disabled}
         label={label}
         value={text}
         placeholder={placeholder}

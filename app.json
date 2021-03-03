@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Open source React Native Mobile App for CBT mindfulness",
+    "githubUrl": "https://github.com/mstill3/OpenThoughts"
   }
 }
