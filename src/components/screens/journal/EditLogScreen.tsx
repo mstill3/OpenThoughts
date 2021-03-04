@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { JournalRoutesList } from '../../navigators';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { buildLog, Log, Mood } from '../../../models';
-import { editLogAction } from '../../../redux/actions';
+import { Log } from '../../../models';
+import { editLogAction, removeLogAction } from '../../../redux/actions';
 import { FormType, LogForm } from '../../forms/LogForm';
 
 type JournalNavigation = StackNavigationProp<JournalRoutesList, 'EditLog'>;
@@ -16,27 +16,16 @@ export const EditLogScreen = () => {
   const routes = useRoute<RouteProp<JournalRoutesList, 'EditLog'>>();
   const { log } = routes.params;
 
-  const [category, setCategory] = useState(log.category);
-  const [negativeThought, setNegativeThought] = useState(log.negativeThought);
-  const [irrationalThoughtPattern, setIrrationalThoughtPattern] = useState(
-    log.irrationalThoughtPattern,
-  );
-  const [replacementThought, setReplacementThought] = useState(
-    log.replacementThought,
-  );
-  const [mood, setMood] = useState<Mood>(log.mood);
+  const editLog = (l: Log) => dispatch(editLogAction(l));
+  const removeLog = (l: Log) => dispatch(removeLogAction(l));
 
-  const editLog = (log: Log) => dispatch(editLogAction(log));
+  const submit = (l: Log) => {
+    editLog(l);
+    navigateBack();
+  };
 
-  const submit = () => {
-    const log = buildLog(
-      category,
-      negativeThought,
-      irrationalThoughtPattern,
-      replacementThought,
-      mood,
-    );
-    editLog(log);
+  const remove = (l: Log) => {
+    removeLog(l);
     navigateBack();
   };
 
@@ -46,17 +35,9 @@ export const EditLogScreen = () => {
     <LogForm
       type={FormType.EXISTING}
       navigateBack={navigateBack}
-      category={category}
-      setCategory={setCategory}
-      negativeThought={negativeThought}
-      setNegativeThought={setNegativeThought}
-      irrationalThoughtPattern={irrationalThoughtPattern}
-      setIrrationalThoughtPattern={setIrrationalThoughtPattern}
-      replacementThought={replacementThought}
-      setReplacementThought={setReplacementThought}
-      mood={mood}
-      setMood={setMood}
+      initialValues={log}
       submit={submit}
+      remove={remove}
     />
   );
 };
