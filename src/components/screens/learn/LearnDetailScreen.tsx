@@ -15,8 +15,12 @@ export const LearnDetailScreen = () => {
   const navigateBack = () => navigation.goBack();
 
   return (
-    <Layout style={style.flexed}>
-      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
+    <Layout style={style.flexedPad}>
+      <Button
+        status="info"
+        accessoryLeft={BackIcon}
+        onPress={navigateBack}
+        style={style.padded}>
         Back
       </Button>
       <Text category="h1"> {article.title} </Text>

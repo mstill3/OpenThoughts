@@ -9,6 +9,10 @@ export default StyleSheet.create({
   flexed: {
     flex: 1,
   },
+  flexedPad: {
+    flex: 1,
+    padding: 10,
+  },
   flexedMiddle: {
     flex: 1,
     alignItems: 'center',
