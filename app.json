@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "privacy": "unlisted",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/rewirelogo.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",

@@ -1,5 +1,5 @@
 import { Mood } from './Mood';
-import { v4 as uuid } from 'react-native-uuid';
+import { v4 as uuid } from 'uuid';
 
 export interface Log {
   id: string;

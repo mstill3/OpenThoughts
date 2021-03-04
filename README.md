@@ -5,6 +5,7 @@ Open source React Native Mobile App for CBT mindfulness
 - [React Native Typescript](https://reactnative.dev/docs/typescript)
 - [UI Kitten Frontend Library](https://akveo.github.io/react-native-ui-kitten/)
 - [gitmoji Code Commits](https://gitmoji.dev)
+- [Images created using GIMP](https://www.gimp.org) (GIMP project files are .xcf)
 
 ### Prerequisites
 #### IOS

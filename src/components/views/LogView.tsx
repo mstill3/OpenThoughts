@@ -18,6 +18,7 @@ export const LogView = ({ log }: Props) => {
     <Card onPress={navigateEditLog}>
       <Text> {log.category} </Text>
       <Text> {log.negativeThought} </Text>
+      <Text> {log.irrationalThoughtPattern} </Text>
       <Text> {log.replacementThought} </Text>
       <Text> {log.mood} </Text>
     </Card>
