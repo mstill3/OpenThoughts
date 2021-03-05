@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Calendar, Text } from '@ui-kitten/components';
-import { MoodColors } from '../../styles/_colors';
-import { diagnosis } from '../../utils/mood';
+import { MoodColors } from '../../../styles/_colors';
+import { diagnosis } from '../../../utils/mood';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { CalendarRoutesList } from '../../navigators';
+import { useNavigation } from '@react-navigation/native';
 
 const daysDict = {
   1: 95,
@@ -15,22 +18,32 @@ const daysDict = {
 const getColoredCircle = (date: Date) =>
   styles[diagnosis(daysDict[date.getDate()]) + 'Circle'];
 
-const DayCell = ({ date }, style) => (
-  <View style={[styles.dayContainer, style.container]}>
-    <Text style={style.text}>{`${date.getDate()}`}</Text>
-    {/* <Text> {date.UTC()} </Text> */}
-    <View style={getColoredCircle(date)} />
-  </View>
-);
+const DayCell = (navigateToDayScreen) => ({ date }, style) => {
+  return (
+    <View
+      style={[styles.dayContainer, style.container]}
+      onTouchStart={() => navigateToDayScreen(date)}>
+      <Text style={style.text}>{`${date.getDate()}`}</Text>
+      {/* <Text> {date.UTC()} </Text> */}
+      <View style={getColoredCircle(date)} />
+    </View>
+  );
+};
 
-export const MyCalendar = () => {
+type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Calendar'>;
+
+export const CalendarView = () => {
+  const navigation = useNavigation<CalendarNavigation>();
+  const navigateToDayScreen = (day: Date) =>
+    navigation.navigate('Day', { day });
+
   const [date, setDate] = useState(null);
 
   return (
     <Calendar
       date={date}
       onSelect={(nextDate) => setDate(nextDate)}
-      renderDay={DayCell}
+      renderDay={DayCell(navigateToDayScreen)}
     />
   );
 };

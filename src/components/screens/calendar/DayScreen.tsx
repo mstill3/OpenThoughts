@@ -5,12 +5,14 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native-svg';
 import { View } from 'react-native';
 import { BackIcon } from '../../../../assets/icons';
-import { useNavigation } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { CalendarRoutesList } from '../../navigators';
 
 type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
 export const DayScreen = () => {
+  const routes = useRoute<RouteProp<CalendarRoutesList, 'Day'>>();
+  const { day } = routes.params;
   const navigation = useNavigation<CalendarNavigation>();
   const navigateBack = () => navigation.goBack();
 
@@ -21,7 +23,8 @@ export const DayScreen = () => {
         <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
           Back
         </Button>
-        <Text> Notes on this Day </Text>
+        <Text> Notes on this Day yoooo </Text>
+        <Button status="info">{day.getDate()}</Button>
       </Layout>
     </View>
   );

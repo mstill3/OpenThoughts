@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { LearnRoutesList } from '../../navigators';
 import { Article } from '../../../models';
+// import { DrawerGroupsShowcase } from '../../views/DrawerGroupsShowcase';
+// import { LearnDrawerGroup } from './LearnDrawerGroup';
 
 type LearnNavigation = StackNavigationProp<LearnRoutesList, 'Learn'>;
 
@@ -36,6 +38,7 @@ export const ListCustomItemShowcase = () => {
       data={articles}
       renderItem={renderArticle}
     />
+    // <LearnDrawerGroup />
   );
 };
 

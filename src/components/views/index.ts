@@ -4,6 +4,5 @@ export * from './ListView';
 export * from './LogListView';
 export * from './LogView';
 export * from './MoodOptionsView';
-export * from './MyCalendar';
 export * from './TextInput';
 export * from './Toolbar';
