@@ -1,6 +1,5 @@
-# OpenThoughts
+# rewire 
 Open source React Native Mobile App for CBT mindfulness
-
 ### Resources
 - [React Native Typescript](https://reactnative.dev/docs/typescript)
 - [UI Kitten Frontend Library](https://akveo.github.io/react-native-ui-kitten/)

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "openthoughts",
-    "slug": "openthoughts",
+    "name": "rewire",
+    "slug": "rewire",
     "version": "1.0.0",
     "privacy": "unlisted",
     "orientation": "portrait",
-    "icon": "./assets/images/rewirelogo.png",
+    "icon": "./assets/images/rewirelogo2.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -30,6 +30,6 @@
       "favicon": "./assets/images/favicon.png"
     },
     "description": "Open source React Native Mobile App for CBT mindfulness",
-    "githubUrl": "https://github.com/mstill3/OpenThoughts"
+    "githubUrl": "https://github.com/mstill3/rewire"
   }
 }
