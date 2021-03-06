@@ -15,7 +15,7 @@ export const LogView = ({ log }: Props) => {
   const navigation = useNavigation<JournalNavigation>();
   const navigateEditLog = () => navigation.navigate('EditLog', { log });
   return (
-    <Card onPress={navigateEditLog}>
+    <Card status="primary" onPress={navigateEditLog}>
       <Text> {log.category} </Text>
       <Text> {log.negativeThought} </Text>
       <Text> {log.irrationalThoughtPattern} </Text>

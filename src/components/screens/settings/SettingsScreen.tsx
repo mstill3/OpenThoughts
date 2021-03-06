@@ -4,7 +4,7 @@ import { Toggle } from '@ui-kitten/components';
 import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SettingsRoutesList } from '../../navigators';
-import { AboutIcon, TrashIcon } from '../../../../assets/icons';
+import { AboutIcon, StatisticsIcon, TrashIcon } from '../../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearLogsAction, setThemeAction } from '../../../redux/actions';
@@ -25,6 +25,7 @@ export const SettingsScreen = () => {
 
   const navigation = useNavigation<SettingsNavigation>();
   const navigateAbout = () => navigation.navigate('About');
+  const navigateStatistics = () => navigation.navigate('Statistics');
 
   const onLightModeChange = (isChecked: boolean) =>
     dispatch(setThemeAction(isChecked ? 'light' : 'dark'));
@@ -44,6 +45,13 @@ export const SettingsScreen = () => {
         accessoryLeft={AboutIcon}
         onPress={navigateAbout}>
         About
+      </Button>
+      <Button
+        style={style.padded}
+        status="warning"
+        accessoryLeft={StatisticsIcon}
+        onPress={navigateStatistics}>
+        Statistics
       </Button>
       <Button
         style={style.padded}

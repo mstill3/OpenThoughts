@@ -52,6 +52,7 @@ export const LogForm = ({
         )
       : buildExistingLog(
           initialValues.id,
+          initialValues.createdAt,
           category,
           negativeThought,
           irrationalThoughtPattern,

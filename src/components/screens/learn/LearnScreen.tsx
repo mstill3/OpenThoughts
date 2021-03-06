@@ -23,7 +23,7 @@ export const ListCustomItemShowcase = () => {
   const renderArticle = ({ item }: ListRenderItemInfo<Article>) => (
     <Card
       style={styles.item}
-      status="basic"
+      status="primary"
       onPress={() => navigateLearnDetails(item)}>
       <View>
         <Text category="h6">{item.title}</Text>

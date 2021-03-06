@@ -22,7 +22,7 @@ export const ListCustomItemShowcase = () => {
   const renderItem = (info) => (
     <Card
       style={styles.item}
-      status="basic"
+      status="primary"
       header={(headerProps) => renderItemHeader(headerProps, info)}
       footer={renderItemFooter}>
       <Text>

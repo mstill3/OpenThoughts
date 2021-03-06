@@ -20,6 +20,7 @@ export const BackIcon = (props): IconElement => getIcon('arrow-back-outline', 'e
 export const AboutIcon = (props): IconElement => getIcon('info', 'eva', props);
 export const TrashIcon = (props): IconElement => getIcon('trash-2-outline', 'eva', props);
 export const StarIcon = (props): IconElement => getIcon('star', 'eva', props);
+export const StatisticsIcon = (props): IconElement => getIcon('bar-chart-outline', 'eva', props);
 
 export const AwfulIcon = (props) => getIcon('sentiment-very-dissatisfied', 'material', props);
 export const BadIcon = (props) => getIcon('sentiment-dissatisfied', 'material', props);

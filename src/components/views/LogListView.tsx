@@ -5,8 +5,12 @@ import { selectDailyLogs } from '../../redux/selectors';
 import { LogView } from './LogView';
 import { StyleSheet } from 'react-native';
 
-export const LogListView = () => {
-  const logs = useSelector(selectDailyLogs(new Date()));
+interface Props {
+  date?: Date;
+}
+
+export const LogListView = ({ date }: Props) => {
+  const logs = useSelector(selectDailyLogs(date ? date : new Date()));
   const renderLog = ({ item, index }) => <LogView key={index} log={item} />;
 
   return (

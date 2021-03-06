@@ -1,12 +1,11 @@
 import React from 'react';
-import { Layout, Button, Divider } from '@ui-kitten/components';
+import { Layout, Button, Divider, Text } from '@ui-kitten/components';
 import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Text } from 'react-native-svg';
-import { View } from 'react-native';
 import { BackIcon } from '../../../../assets/icons';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { CalendarRoutesList } from '../../navigators';
+import { LogListView } from '../../views';
 
 type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Day'>;
 
@@ -17,15 +16,18 @@ export const DayScreen = () => {
   const navigateBack = () => navigation.goBack();
 
   return (
-    <View style={style.flexed}>
+    <Layout style={style.flexedPad}>
+      <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
+        Back
+      </Button>
+      <Text category="h6" style={style.centeredText}>
+        {day.getMonth()} / {day.getDate()} / {day.getFullYear()}
+      </Text>
       <Divider />
-      <Layout style={style.centeredLayout}>
-        <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
-          Back
-        </Button>
-        <Text> Notes on this Day yoooo </Text>
-        <Button status="info">{day.getDate()}</Button>
-      </Layout>
-    </View>
+      {/* <Layout style={style.centeredLayout}> */}
+      {/* <Button status="info">{day.getDate()}</Button> */}
+      <LogListView date={day} />
+      {/* </Layout> */}
+    </Layout>
   );
 };

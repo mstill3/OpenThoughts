@@ -31,6 +31,7 @@ export const buildNewLog = (
 
 export const buildExistingLog = (
   id: string,
+  createdAt: Date,
   category: string,
   negativeThought: string,
   irrationalThoughtPattern: string,
@@ -38,7 +39,7 @@ export const buildExistingLog = (
   mood: Mood,
 ): Log => ({
   id: id,
-  createdAt: new Date(),
+  createdAt: createdAt,
   updatedAt: new Date(),
   category: category,
   negativeThought: negativeThought,
