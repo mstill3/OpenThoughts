@@ -6,6 +6,8 @@ import { diagnosis } from '../../../utils/mood';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { CalendarRoutesList } from '../../navigators';
 import { useNavigation } from '@react-navigation/native';
+// import { useSelector } from 'react-redux';
+// import { selectLogsBetween } from '../../../redux/selectors';
 
 const daysDict = {
   1: 95,
@@ -37,7 +39,9 @@ export const CalendarView = () => {
   const navigateToDayScreen = (day: Date) =>
     navigation.navigate('Day', { day });
 
-  const [date, setDate] = useState(null);
+  // const monthlyLogs = useSelector(selectLogsBetween(new Date(), new Date()));
+
+  const [date, setDate] = useState<Date>(null);
 
   return (
     <Calendar

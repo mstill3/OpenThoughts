@@ -1,3 +1,4 @@
+import 'react-native-get-random-values';
 import { Mood } from './Mood';
 import { v4 as uuid } from 'uuid';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { articles } from '../../../../data/articles';
+import { negativeThoughtPatternArticles } from '../../../../data';
 import { ListRenderItemInfo, StyleSheet, View } from 'react-native';
 import { Card, List, Text } from '@ui-kitten/components';
 import { useNavigation } from '@react-navigation/native';
@@ -35,7 +35,7 @@ export const ListCustomItemShowcase = () => {
   return (
     <List
       contentContainerStyle={styles.contentContainer}
-      data={articles}
+      data={negativeThoughtPatternArticles}
       renderItem={renderArticle}
     />
     // <LearnDrawerGroup />
