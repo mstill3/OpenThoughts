@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Calendar, Layout, Text } from '@ui-kitten/components';
+import { Alert, StyleSheet, View } from 'react-native';
+import { Layout, Text } from '@ui-kitten/components';
 import { MoodColors } from '../../../styles/_colors';
 import { diagnosis } from '../../../utils/mood';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -8,6 +8,9 @@ import { CalendarRoutesList } from '../../navigators';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { selectLogsInMonth } from '../../../redux/selectors';
+import { Calendar, DateObject } from 'react-native-calendars';
+import { AgendaScreen } from './MyAdgenda';
+import style from '../../../styles/style';
 // import { useSelector } from 'react-redux';
 // import { selectLogsBetween } from '../../../redux/selectors';
 
@@ -41,20 +44,12 @@ export const CalendarView = () => {
   const navigateToDayScreen = (day: Date) =>
     navigation.navigate('Day', { day: day.getTime() });
 
-  const [date, setDate] = useState<Date>(new Date());
-  const monthlyLogs = useSelector(selectLogsInMonth(date));
+  const [date, setDate] = useState<DateObject>();
+  // const monthlyLogs = useSelector(selectLogsInMonth(date));
 
   return (
-    <Layout>
-      <Text>
-        {JSON.stringify(date)} - {JSON.stringify(monthlyLogs)}
-      </Text>
-      <Calendar
-        boundingMonth={false}
-        date={date}
-        onSelect={(nextDate) => setDate(nextDate)}
-        renderDay={DayCell(navigateToDayScreen)}
-      />
+    <Layout style={style.flexedMiddle}>
+      <AgendaScreen />
     </Layout>
   );
 };
