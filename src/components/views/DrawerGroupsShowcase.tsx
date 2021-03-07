@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, DrawerGroup, DrawerItem, Icon, Text } from '@ui-kitten/components';
+import { Drawer, DrawerGroup, DrawerItem, Icon } from '@ui-kitten/components';
 import { ListCustomItemShowcase } from './ListView';
 
 const SmartphoneIcon = (props) => <Icon {...props} name="smartphone-outline" />;

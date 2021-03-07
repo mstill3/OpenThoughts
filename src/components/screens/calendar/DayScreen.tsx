@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Layout, Button, Divider, Text } from '@ui-kitten/components';
 import style from '../../../styles/style';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -15,18 +15,20 @@ export const DayScreen = () => {
   const navigation = useNavigation<CalendarNavigation>();
   const navigateBack = () => navigation.goBack();
 
+  const date = useMemo(() => new Date(day), [day]);
+
   return (
     <Layout style={style.flexedPad}>
       <Button status="info" accessoryLeft={BackIcon} onPress={navigateBack}>
         Back
       </Button>
       <Text category="h6" style={style.centeredText}>
-        {day.getMonth()} / {day.getDate()} / {day.getFullYear()}
+        {date.getMonth()} / {date.getDate()} / {date.getFullYear()}
       </Text>
       <Divider />
       {/* <Layout style={style.centeredLayout}> */}
       {/* <Button status="info">{day.getDate()}</Button> */}
-      <LogListView date={day} />
+      <LogListView date={date} />
       {/* </Layout> */}
     </Layout>
   );

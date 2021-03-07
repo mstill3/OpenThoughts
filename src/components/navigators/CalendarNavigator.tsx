@@ -6,7 +6,7 @@ import { Log } from '../../models';
 
 export type CalendarRoutesList = {
   Calendar: JSX.Element;
-  Day: { day: Date };
+  Day: { day: number };
   EditLog: { log: Log };
 };
 

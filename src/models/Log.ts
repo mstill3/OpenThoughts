@@ -4,8 +4,8 @@ import { v4 as uuid } from 'uuid';
 
 export interface Log {
   id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: number;
+  updatedAt: number;
   category: string;
   negativeThought: string;
   irrationalThoughtPattern: string;
@@ -21,8 +21,8 @@ export const buildNewLog = (
   mood: Mood,
 ): Log => ({
   id: uuid(),
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  createdAt: Date.now(),
+  updatedAt: Date.now(),
   category: category,
   negativeThought: negativeThought,
   irrationalThoughtPattern: irrationalThoughtPattern,
@@ -32,7 +32,7 @@ export const buildNewLog = (
 
 export const buildExistingLog = (
   id: string,
-  createdAt: Date,
+  createdAt: number,
   category: string,
   negativeThought: string,
   irrationalThoughtPattern: string,
@@ -41,7 +41,7 @@ export const buildExistingLog = (
 ): Log => ({
   id: id,
   createdAt: createdAt,
-  updatedAt: new Date(),
+  updatedAt: Date.now(),
   category: category,
   negativeThought: negativeThought,
   irrationalThoughtPattern: irrationalThoughtPattern,

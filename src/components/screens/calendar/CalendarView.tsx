@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Calendar, Text } from '@ui-kitten/components';
+import { Calendar, Layout, Text } from '@ui-kitten/components';
 import { MoodColors } from '../../../styles/_colors';
 import { diagnosis } from '../../../utils/mood';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { CalendarRoutesList } from '../../navigators';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { selectLogsInMonth } from '../../../redux/selectors';
 // import { useSelector } from 'react-redux';
 // import { selectLogsBetween } from '../../../redux/selectors';
 
@@ -37,18 +39,23 @@ type CalendarNavigation = StackNavigationProp<CalendarRoutesList, 'Calendar'>;
 export const CalendarView = () => {
   const navigation = useNavigation<CalendarNavigation>();
   const navigateToDayScreen = (day: Date) =>
-    navigation.navigate('Day', { day });
+    navigation.navigate('Day', { day: day.getTime() });
 
-  // const monthlyLogs = useSelector(selectLogsBetween(new Date(), new Date()));
-
-  const [date, setDate] = useState<Date>(null);
+  const [date, setDate] = useState<Date>(new Date());
+  const monthlyLogs = useSelector(selectLogsInMonth(date));
 
   return (
-    <Calendar
-      date={date}
-      onSelect={(nextDate) => setDate(nextDate)}
-      renderDay={DayCell(navigateToDayScreen)}
-    />
+    <Layout>
+      <Text>
+        {JSON.stringify(date)} - {JSON.stringify(monthlyLogs)}
+      </Text>
+      <Calendar
+        boundingMonth={false}
+        date={date}
+        onSelect={(nextDate) => setDate(nextDate)}
+        renderDay={DayCell(navigateToDayScreen)}
+      />
+    </Layout>
   );
 };
 
