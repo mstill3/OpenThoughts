@@ -8,7 +8,7 @@ import {
   TopNavigationProps,
 } from '@ui-kitten/components';
 import { BackIcon } from '../../../assets/icons';
-import * as eva from '@eva-design/eva';
+import * as evo from '../../../assets/designs/evo';
 import { useSelector } from 'react-redux';
 import { selectTheme } from '../../redux/selectors';
 
@@ -38,7 +38,7 @@ export const Toolbar = (props: ToolbarProps): TopNavigationActionElement => {
   return (
     <TopNavigation
       {...topNavigationProps}
-      style={{ backgroundColor: eva[theme][backColor] }}
+      style={{ backgroundColor: evo[theme][backColor] }}
       leftControl={onBackPress && renderBackAction()}
     />
   );

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
-import * as eva from '@eva-design/eva';
+import * as evo from '../../../assets/designs/evo';
 import {
   BulbIcon,
   CalendarIcon,
@@ -27,7 +27,7 @@ export const Bottom = ({ navigation, state }: BottomNavigator) => {
     <BottomNavigation
       selectedIndex={state.index}
       onSelect={(index) => navigation.navigate(state.routeNames[index])}
-      style={{ backgroundColor: eva[theme][backColor] }}>
+      style={{ backgroundColor: evo[theme][backColor] }}>
       <BottomNavigationTab icon={JournalIcon} title="Journal" />
       <BottomNavigationTab icon={CalendarIcon} title="Calendar" />
       <BottomNavigationTab icon={BulbIcon} title="Learn" />

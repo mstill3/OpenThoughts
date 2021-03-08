@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { CalendarScreen, DayScreen, EditLogScreen } from '../screens';
+import { DayScreen, EditLogScreen } from '../screens';
 import { Log } from '../../models';
-import { AgendaScreen } from '../screens/calendar/MyAdgenda';
+import { AgendaScreen } from '../screens/calendar/MyAgenda';
 
 export type CalendarRoutesList = {
   Calendar: JSX.Element;

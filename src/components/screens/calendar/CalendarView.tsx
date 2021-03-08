@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { selectLogsInMonth } from '../../../redux/selectors';
 import { Calendar, DateObject } from 'react-native-calendars';
-import { AgendaScreen } from './MyAdgenda';
+import { AgendaScreen } from './MyAgenda';
 import style from '../../../styles/style';
 // import { useSelector } from 'react-redux';
 // import { selectLogsBetween } from '../../../redux/selectors';

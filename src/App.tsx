@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import * as eva from '@eva-design/eva';
+import * as evo from '../assets/designs/evo';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { TabNavigator } from './TabNavigator';
@@ -36,14 +36,14 @@ const App = () => {
   }, []);
 
   return (
-    <ApplicationProvider {...eva} theme={eva[theme]}>
+    <ApplicationProvider {...evo} theme={evo[theme]}>
       <IconRegistry
         icons={[EvaIconsPack, FeatherIconsPack, MaterialIconsPack]}
       />
       {fontsLoaded ? (
         <PersistGate loading={<LoadingScreen />} persistor={persistor}>
           <SafeAreaView
-            style={{ flex: 1, backgroundColor: eva[theme][backColor] }}>
+            style={{ flex: 1, backgroundColor: evo[theme][backColor] }}>
             <StatusBar
               barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
             />
